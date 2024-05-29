@@ -1,24 +1,25 @@
 import Link from "next/link";
-
+import { Logo } from "@/components/logo";
 export const HeaderNav = () => {
-    return (
-        <header className="flex w-full justify-between p-8 text-white">
-            {/* logo */}
-            <div className="flex">
-                <Link
-                    className="cursor-pointer font-sans text-xl font-semibold "
-                    href={"/"}
-                >
-                    Story/Tale
-                </Link>
-            </div>
+  return (
+    <header className="flex w-full justify-between items-center px-7 p-5 text-black">
+      {/* left navigation consist of logo and navigation links  */}
+      <div className="flex justify-center items-center space-x-14">
+        <Link className="flex justify-center items-center space-x-2" href={"/"}>
+          <Logo />
+          <h1 className="cursor-pointer  font-semibold ">Webpolio </h1>
+        </Link>
+        <nav className="flex justify-center items-center text-sm space-x-4 font-[600] text-slate-400">
+          <Link href={"/examples"}>Examples</Link>
+          <Link href={"/themes"}>Themes</Link>
+          <Link href={"/pricing"}>Pricing</Link>
+        </nav>
+      </div>
 
-            {/* auth and nav resources */}
-            <div className="flex space-x-2 justify-center items-center font-semibold">
-                <span className="cursor-pointer">Resources</span>
-                <div className="h-4/6 w-0.5 bg-white rounded-full"></div>
-                <span className="cursor-pointer">Sign In</span>
-            </div>
-        </header>
-    );
+      {/* right navigation link consist of auth */}
+      <button className="bg-white text-black border px-2.5 py-1 font-semibold rounded-lg ">
+        Sign Up
+      </button>
+    </header>
+  );
 };

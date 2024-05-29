@@ -1,19 +1,24 @@
-import { HeaderNav } from "@/components/headerNav";
-import { GetStartedBtn } from "@/components/small-client-component/getStartedBtn"
+"use client";
+import DotPattern from "@/components/magicui/dot-pattern";
 export default function Home() {
   return (
-    <main className="flex h-full w-full flex-col">
-      <div className="flex h-screen w-full flex-col bg-[url('https://utfs.io/f/91812889-3b26-4282-a9a4-8f672ce87655-a3nf98.png')] bg-cover bg-center ">
-        <HeaderNav />
-        {/* hero section */}
-        <div className="mt-20 flex flex-col px-8 text-white ">
-          <span className="text-[#787B8D] font-mono text-sm mb-2">YOUR DIGITAL PORTFOLIO
+    <main className="min-h-screen h-full flex flex-col w-full">
+      {/* hero section */}
+      <div className="relative overflow-hidden">
+        <section className="flex flex-col items-center rounded-2xl h-[90vh] bg-[#F6F6F8] mx-8 my-4 border p-4">
+          <div className="absolute flex h-full w-full  overflow-hidden  gap-8 opacity-55  ">
+            {Array.from({ length: 3 }).map((_, i) => (
+              <DotPattern key={i} width={30} height={30} cr={1.2} cx={1.2} cy={1.2} />
+            ))}
+          </div>
+          {/* Unlock Your Professional Potential: LinkedIn Meets Web Portfolios */}
+          {/* Turn Your LinkedIn into a Personalized Web Portfolio with Webpolio */}
+          <span className="bg-[#FF560E] text-white rounded-full px-6 py-1.5 flex justify-center items-center space-x-2 z-20 text-sm ">
+            LinkedIn Meets Web Portfolio
           </span>
-          <h1 className="text-7xl font-medium pr-24">Transform LinkedIn Profiles into  Web Portfolios
-          </h1>
-          <GetStartedBtn />
-        </div>
+        </section>
       </div>
+      <div className="flex h-96 w-96"></div>
     </main>
   );
 }

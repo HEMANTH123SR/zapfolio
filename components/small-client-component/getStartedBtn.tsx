@@ -59,7 +59,7 @@ export const GetStartedBtn = () => {
                 Get Started
                 <ArrowRight
                     ref={arrowIcon}
-                    className="w-5 h-5"
+                    className="w-5 h-5 ml-1.5"
                     strokeWidth={1.2}
                 />
             </button>
