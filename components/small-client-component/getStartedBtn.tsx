@@ -54,13 +54,13 @@ export const GetStartedBtn = () => {
             <button
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                className="text-black px-4 pr-5 py-1.5 bg-white rounded-full flex justify-center items-center space-x-3.5"
+                className="text-white px-6  py-2 border  bg-[#FF560E] rounded-xl flex justify-center items-center space-x-3.5  font-semibold cursor-pointer"
             >
                 Get Started
                 <ArrowRight
                     ref={arrowIcon}
                     className="w-5 h-5 ml-1.5"
-                    strokeWidth={1.2}
+                    strokeWidth={3}
                 />
             </button>
         </div>
