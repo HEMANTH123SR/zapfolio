@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Logo } from "@/components/logo";
+import { Logo } from "@/components/component/logo";
 export const HeaderNav = () => {
   return (
     <header className="flex w-full justify-between items-center px-7 p-5 text-black">
@@ -9,7 +9,7 @@ export const HeaderNav = () => {
           <Logo />
           <h1 className="cursor-pointer  font-semibold ">Webpolio </h1>
         </Link>
-        <nav className="flex justify-center items-center text-sm space-x-4 font-[600] text-slate-400">
+        <nav className="flex justify-center items-center text-sm space-x-4 font-[600] text-[#868686]">
           <Link href={"/examples"}>Examples</Link>
           <Link href={"/themes"}>Themes</Link>
           <Link href={"/pricing"}>Pricing</Link>
