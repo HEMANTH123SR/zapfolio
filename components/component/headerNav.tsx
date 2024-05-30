@@ -15,7 +15,6 @@ export const HeaderNav = () => {
           <Link href={"/pricing"}>Pricing</Link>
         </nav>
       </div>
-
       {/* right navigation link consist of auth */}
       <button className="bg-white text-black border px-2.5 py-1 font-semibold rounded-lg ">
         Sign Up
