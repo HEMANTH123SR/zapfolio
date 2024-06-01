@@ -15,9 +15,9 @@ export const LinkedinToWebpolio = () => {
                     <img src="/linkedin-logo.webp" className="h-12 w-12 rounded-xl" />
                     <div className='flex flex-col border rounded-t-lg'>
                         <div className='bg-black  h-4 rounded-t-lg px-4 flex items-center space-x-1.5'>
-                            <div className='h-1.5 w-1.5 bg-[#FF5E58] rounded-full'></div>
-                            <div className='h-1.5 w-1.5 bg-[#FEBC2F] rounded-full'></div>
-                            <div className='h-1.5 w-1.5 bg-[#27C841] rounded-full'></div>
+                            <div className='h-1.5 w-1.5 bg-white rounded-full'></div>
+                            <div className='h-1.5 w-1.5 bg-white rounded-full'></div>
+                            <div className='h-1.5 w-1.5 bg-white rounded-full'></div>
                         </div>
                         <img src="/linkedin-to-webpolio.png" className="w-96 h-auto" />
                     </div>
@@ -28,16 +28,15 @@ export const LinkedinToWebpolio = () => {
                     <img src="/logo2.png" className="h-12 w-12 rounded-xl" />
                     <div className='flex flex-col border rounded-t-lg'>
                         <div className='bg-black  h-4 rounded-t-lg px-4 flex items-center space-x-1.5'>
-                            <div className='h-1.5 w-1.5 bg-[#FF5E58] rounded-full'></div>
-                            <div className='h-1.5 w-1.5 bg-[#FEBC2F] rounded-full'></div>
-                            <div className='h-1.5 w-1.5 bg-[#27C841] rounded-full'></div>
+                            <div className='h-1.5 w-1.5 bg-white rounded-full'></div>
+                            <div className='h-1.5 w-1.5 bg-white rounded-full'></div>
+                            <div className='h-1.5 w-1.5 bg-white rounded-full'></div>
                         </div>
                         <img src="/webpolio-to-linkedin.png" className="w-96 h-auto" />
                     </div>
                     <span className="text-sm text-slate-600">To Webpolio</span>
                 </div>
             </div>
-
         </div>
     );
 };
