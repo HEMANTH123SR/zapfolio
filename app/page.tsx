@@ -3,6 +3,7 @@ import { LinkedinToWebpolio } from "@/components/sections/linkedinToWebpolio"
 import { ExampleSection } from "@/components/sections/exampleSection"
 import { BentoGridSection } from "@/components/sections/bentoGridSection"
 import { TestimonialsSection } from "@/components/sections/testimonialsSection"
+import { FaqSection } from "@/components/sections/faqSections"
 export default function Home() {
   return (
     <main className="min-h-screen h-full flex flex-col w-full">
@@ -14,6 +15,8 @@ export default function Home() {
       <ExampleSection />
       <div className="my-14"></div>
       <TestimonialsSection />
+      <div className="my-14"></div>
+      <FaqSection />
       <div className="flex h-96 w-96"></div>
     </main>
   );
