@@ -13,7 +13,7 @@ export const InfiniteMovingCards = ({
     items: {
         quote: string;
         name: string;
-        title: string;
+        image: string;
     }[];
     direction?: "left" | "right";
     speed?: "fast" | "normal" | "slow";
@@ -65,7 +65,7 @@ export const InfiniteMovingCards = ({
             } else if (speed === "normal") {
                 containerRef.current.style.setProperty("--animation-duration", "40s");
             } else {
-                containerRef.current.style.setProperty("--animation-duration", "80s");
+                containerRef.current.style.setProperty("--animation-duration", "100s");
             }
         }
     };
@@ -96,15 +96,15 @@ export const InfiniteMovingCards = ({
                                 aria-hidden="true"
                                 className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
                             ></div>
-                            <span className=" relative z-20 text-sm leading-[1.6] text-orange-500 font-normal">
+                            <span className=" relative z-20 text-sm leading-[1.6] text-orange-500 ">
                                 {item.quote}
                             </span>
                             <div className="relative z-20 mt-6 flex flex-row items-center">
-                                <span className="flex flex-col gap-1">
-                                    <span className=" text-sm leading-[1.6] text-orange-600 font-normal">
+                                <span className="flex justify-center items-center gap-3">
+                                    <img src={item.image} alt={item.name} className="h-14 w-14 rounded-full" />
+                                    <span className=" leading-[1.6] text-orange-600 ">
                                         {item.name}
                                     </span>
-
                                 </span>
                             </div>
                         </blockquote>
