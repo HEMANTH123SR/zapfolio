@@ -5,7 +5,6 @@ export const BentoGridSection = () => {
             <h2 className="text-5xl font-medium">
                 What Does Webpolio offer for you
             </h2>
-            {/* F6F6F8 */}
 
             <div className="flex justify-center items-center w-full my-12">
 

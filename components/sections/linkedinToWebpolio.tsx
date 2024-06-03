@@ -14,7 +14,7 @@ export const LinkedinToWebpolio = () => {
 
                 <div className="flex flex-col justify-center items-center space-y-2">
                     <img src="/linkedin-logo.webp" className="h-12 w-12 rounded-xl" />
-                    <div className='flex flex-col border border-t-0'>
+                    <div className='flex flex-col border border-t-0 shadow-2xl'>
                         <div className='bg-white border  h-4  px-4 flex items-center space-x-1.5'>
                             <div className='h-1.5 w-1.5 bg-[#C7C6C6] rounded-full'></div>
                             <div className='h-1.5 w-1.5 bg-[#C7C6C6] rounded-full'></div>
@@ -29,7 +29,7 @@ export const LinkedinToWebpolio = () => {
 
                 <div className="flex flex-col justify-center items-center space-y-2">
                     <img src="/logo2.png" className="h-12 w-12 rounded-xl" />
-                    <div className='flex flex-col border border-t-0 '>
+                    <div className='flex flex-col border border-t-0 shadow-2xl'>
                         <div className='bg-white border  h-4  px-4 flex items-center space-x-1.5'>
                             <div className='h-1.5 w-1.5 bg-[#C7C6C6] rounded-full'></div>
                             <div className='h-1.5 w-1.5 bg-[#C7C6C6] rounded-full'></div>

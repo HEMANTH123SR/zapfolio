@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { HeaderNav } from "@/components/component/headerNav"
-
+import { Fotter } from "@/components/component/fotter"
 import localFont from "next/font/local"
 
 const localfont = localFont({
@@ -23,7 +23,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={localfont.className}>
         <HeaderNav />
-        {children}</body>
+        {children}
+        <Fotter />
+      </body>
     </html>
   );
 }
