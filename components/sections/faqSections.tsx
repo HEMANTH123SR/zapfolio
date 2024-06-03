@@ -7,8 +7,9 @@ import {
 export const FaqSection = () => {
     return (
         <section className="w-[95%] max-w-[1400px] flex flex-col items-center justify-between rounded-xl border bg-[#F6F6F8] py-16">
-            <h1 className="mb-8 text-5xl font-semibold text-black">Any questions?</h1>
-            <Accordion type="single" collapsible className="w-10/12 px-5">
+
+            <h1 className="mb-8 text-3xl md:text-4xl lg:text-5xl font-semibold text-black">Any questions?</h1>
+            <Accordion type="single" collapsible className="w-full xl:w-10/12 px-5">
                 <AccordionItem value="item-1">
                     <AccordionTrigger>What is Webpolio?</AccordionTrigger>
                     <AccordionContent>
@@ -33,7 +34,7 @@ export const FaqSection = () => {
 
                 <AccordionItem value="item-3" className="hidden md:block">
                     <AccordionTrigger>
-                        Do I need to have coding or web development skills to use Webpolio?
+                        Do I need to know coding  to use Webpolio?
                     </AccordionTrigger>
                     <AccordionContent>
                         No, Webpolio is designed to be user-friendly and accessible to
