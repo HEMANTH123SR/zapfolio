@@ -1,21 +1,20 @@
-import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 export const ExampleSection = () => {
     return (
-        <div className="flex flex-col justify-between items-center mx-8 bg-[#F7F9FB]   rounded-xl border py-14">
+        <div className="flex w-11/12 max-w-[1400px] flex-col items-center justify-between rounded-xl border bg-[#F7F9FB] py-14">
             <h2 className="text-5xl font-medium">Explore Possibilities</h2>
-            <p className="text-sm mt-2 text-slate-600">
+            <p className="mt-2 text-sm text-slate-600">
                 Discover How Others Showcase Their Professional Journey With The Help Of
                 Webpolio
             </p>
             <Link
                 href={"/examples"}
-                className=" text-white bg-[#FF560E] my-5 px-3 py-1.5 rounded-full hover:scale-105 text-sm"
+                className="my-5 rounded-full bg-[#FF560E] px-3 py-1.5 text-sm text-white hover:scale-105"
             >
                 View More Examples
             </Link>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3  gap-y-20 mt-12">
+            <div className="mt-12 grid grid-cols-1 gap-y-20 md:grid-cols-2 xl:grid-cols-3">
                 {[
                     {
                         userName: "hemanth",
@@ -63,14 +62,17 @@ export const ExampleSection = () => {
                     <Link
                         href={""}
                         key={portfolio.imageUrl}
-                        className="flex flex-col space-y-5 justify-center items-center "
+                        className="flex flex-col items-center justify-center space-y-5"
                     >
-                        <img src={portfolio.imageUrl} className="w-10/12 h-auto shadow-2xl border" />
-                        <div className="flex w-10/12 flex-col  ">
-                            <span className="text-black capitalize font-semibold text-sm">
+                        <img
+                            src={portfolio.imageUrl}
+                            className="h-auto w-10/12 border shadow-2xl"
+                        />
+                        <div className="flex w-10/12 flex-col">
+                            <span className="text-sm font-semibold capitalize text-black">
                                 {portfolio.userName}
                             </span>
-                            <span className="text-[#808994] capitalize font-semibold text-sm">
+                            <span className="text-sm font-semibold capitalize text-[#808994]">
                                 theme : {portfolio.theme}
                             </span>
                         </div>
@@ -80,5 +82,3 @@ export const ExampleSection = () => {
         </div>
     );
 };
-
-

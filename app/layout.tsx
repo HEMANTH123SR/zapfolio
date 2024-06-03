@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={localfont.className}>
+      <body className={`${localfont.className} flex flex-col justify-center items-center`}>
         <HeaderNav />
         {children}
         <Fotter />

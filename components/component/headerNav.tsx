@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Logo } from "@/components/component/logo";
 export const HeaderNav = () => {
   return (
-    <header className="flex w-full justify-between items-center px-7 p-5 text-black">
+    <header className="flex w-full max-w-[1550px] justify-between items-center px-7 p-5 text-black">
       {/* left navigation consist of logo and navigation links  */}
       <div className="flex justify-center items-center space-x-14">
         <Link className="flex justify-center items-center space-x-2" href={"/"}>

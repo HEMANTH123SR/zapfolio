@@ -5,7 +5,7 @@ import { TestimonialsSection } from "@/components/sections/testimonialsSection";
 import { FaqSection } from "@/components/sections/faqSections";
 export default function Home() {
   return (
-    <main className="flex h-full w-full flex-col">
+    <main className="flex h-full w-full flex-col items-center justify-center overflow-x-hidden">
       <div className="my-2"></div>
       <HeroSection />
       <div className="my-14"></div>

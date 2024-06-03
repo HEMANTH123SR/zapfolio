@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/accordion";
 export const FaqSection = () => {
     return (
-        <section className="mx-8 flex flex-col items-center justify-between rounded-xl border bg-[#F6F6F8] py-16">
+        <section className="w-11/12 max-w-[1400px]  flex-col items-center justify-between rounded-xl border bg-[#F6F6F8] py-16">
             <h1 className="mb-8 text-5xl font-semibold text-black">Any questions?</h1>
             <Accordion type="single" collapsible className="w-10/12 px-5">
                 <AccordionItem value="item-1">

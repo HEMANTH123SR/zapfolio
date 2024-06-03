@@ -2,8 +2,8 @@ import { GetStartedBtn } from "@/components/small-client-component/getStartedBtn
 import DotPattern from "@/components/magicui/dot-pattern";
 export const HeroSection = () => {
     return (
-        <div className="relative overflow-hidden ">
-            <section className="flex flex-col items-center rounded-2xl h-[90vh] bg-[#F6F6F8] mx-8  border p-4">
+        <div className="relative overflow-hidden w-11/12 max-w-[1400px]">
+            <section className="flex flex-col items-center rounded-2xl  bg-[#F6F6F8]   border p-4">
                 <div className="absolute flex h-full w-full  overflow-hidden  gap-8 opacity-55">
                     {Array.from({ length: 3 }).map((_, i) => (
                         <DotPattern
