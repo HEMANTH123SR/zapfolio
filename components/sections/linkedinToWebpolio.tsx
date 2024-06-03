@@ -2,15 +2,15 @@ import { ArrowRight } from 'lucide-react';
 
 export const LinkedinToWebpolio = () => {
     return (
-        <div className="w-[95%] max-w-[1400px] flex flex-col justify-between items-center  bg-[#F7F9FB] rounded-xl border py-16">
-            <h2 className="text-5xl font-medium">
+        <div className="w-[95%] max-w-[1400px] flex flex-col justify-between items-center  bg-[#F7F9FB] rounded-xl border py-16 px-10">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium">
                 Build Your Portfolio In 2 Minutes
             </h2>
             <p className="text-sm mt-2 text-slate-600">
                 Webpolio seamlessly transforms your LinkedIn profile into a captivating
                 web portfolio
             </p>
-            <div className="flex space-x-12 justify-center items-center mt-16">
+            <div className="flex space-x-8 lg:space-x-12 justify-center items-center mt-16">
 
                 <div className="flex flex-col justify-center items-center space-y-2">
                     <img src="/linkedin-logo.webp" className="h-12 w-12 rounded-xl" />
