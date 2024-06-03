@@ -34,7 +34,7 @@ const testimonials = [
 
 export const TestimonialsSection = () => {
     return (
-        <section className="relative mx-8 overflow-hidden antialiased">
+        <section className="relative mx-8 w-[95%] border  rounded-xl overflow-hidden antialiased">
             <div className="flex flex-col justify-between items-center   rounded-xl border pt-12  pb-8  bg-[#FF560E]">
                 <h1 className="text-5xl font-serif text-white  font-semibold text-black] overflow-hidden mb-8">
                     See what our users have to say…

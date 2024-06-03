@@ -1,7 +1,7 @@
 import Link from "next/link";
 export const ExampleSection = () => {
     return (
-        <div className="flex w-11/12 max-w-[1400px] flex-col items-center justify-between rounded-xl border bg-[#F7F9FB] py-14">
+        <div className="flex w-[95%] max-w-[1400px] flex-col items-center justify-between rounded-xl border bg-[#F7F9FB] py-14">
             <h2 className="text-5xl font-medium">Explore Possibilities</h2>
             <p className="mt-2 text-sm text-slate-600">
                 Discover How Others Showcase Their Professional Journey With The Help Of

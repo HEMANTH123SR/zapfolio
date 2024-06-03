@@ -2,7 +2,7 @@ import { ArrowRight } from 'lucide-react';
 
 export const LinkedinToWebpolio = () => {
     return (
-        <div className="w-11/12 max-w-[1400px] flex flex-col justify-between items-center  bg-[#F7F9FB] rounded-xl border py-16">
+        <div className="w-[95%] max-w-[1400px] flex flex-col justify-between items-center  bg-[#F7F9FB] rounded-xl border py-16">
             <h2 className="text-5xl font-medium">
                 Build Your Portfolio In 2 Minutes
             </h2>
