@@ -2,7 +2,7 @@ import { Twitter, Linkedin, Instagram, Github } from 'lucide-react';
 
 export const Fotter = () => {
     return (
-        <footer className="w-[95%] mb-8 flex flex-col items-center justify-between rounded-xl border bg-[#F6F6F8] py-16">
+        <footer className="w-[95%] max-w-[1400px]  mb-8 flex flex-col items-center justify-between rounded-xl border bg-[#F6F6F8] py-16">
             <div className="flex justify-between px-12 w-full text-black">
                 <div className="flex flex-col space-y-6 ">
                     <span className="text-[#FF560E] font-semibold">{`{ }  Get Started`}</span>
