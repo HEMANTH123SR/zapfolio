@@ -2,7 +2,7 @@ import Link from "next/link";
 export const ExampleSection = () => {
     return (
         <div className="flex w-[95%] max-w-[1400px] flex-col items-center justify-between rounded-xl border bg-[#F7F9FB] py-14">
-            <h2 className="text-5xl font-medium">Explore Possibilities</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium">Explore Possibilities</h2>
             <p className="mt-2 text-sm text-slate-600">
                 Discover How Others Showcase Their Professional Journey With The Help Of
                 Webpolio
@@ -14,7 +14,7 @@ export const ExampleSection = () => {
                 View More Examples
             </Link>
 
-            <div className="mt-12 grid grid-cols-1 gap-y-20 md:grid-cols-2 xl:grid-cols-3">
+            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-y-12 lg:gap-y-20 lg:grid-cols-3 ">
                 {[
                     {
                         userName: "hemanth",
