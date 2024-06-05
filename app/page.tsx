@@ -8,15 +8,17 @@ export default function Home() {
     <main className="flex h-full w-full flex-col items-center justify-center overflow-x-hidden">
       <div className="my-2"></div>
       <HeroSection />
-      <div className="my-14"></div>
+      <div className="my-7 md:my-8 lg:my-10 xl:my-12"></div>
       <LinkedinToWebpolio />
-      <div className="my-14"></div>
+      <div className="my-7 md:my-8 lg:my-10 xl:my-12"></div>
       <ExampleSection />
-      <div className="my-14"></div>
+      <div className="my-7 md:my-8 lg:my-10 xl:my-12"></div>
       <TestimonialsSection />
-      <div className="my-14"></div>
+      <div className="my-7 md:my-8 lg:my-10 xl:my-12"></div>
       <FaqSection />
-      <div className="my-14"></div>
+      <div className="my-7 md:my-8 lg:my-10 xl:my-12"></div>
     </main>
   );
 }
+
+

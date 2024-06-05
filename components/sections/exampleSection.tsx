@@ -3,10 +3,11 @@ export const ExampleSection = () => {
     return (
         <div className="flex w-[95%] max-w-[1400px] flex-col items-center justify-between rounded-xl border bg-[#F7F9FB] py-14">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium">Explore Possibilities</h2>
-            <p className="mt-2 text-sm text-slate-600">
+            <p className="mt-2 text-sm text-slate-600 hidden lg:block">
                 Discover How Others Showcase Their Professional Journey With The Help Of
                 Webpolio
             </p>
+            <p className="mt-2 text-sm text-slate-600  lg:hidden">See how others showcase their professional journey</p>
             <Link
                 href={"/examples"}
                 className="my-5 rounded-full bg-[#FF560E] px-3 py-1.5 text-sm text-white hover:scale-105"
