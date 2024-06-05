@@ -3,8 +3,8 @@ import DotPattern from "@/components/magicui/dot-pattern";
 import { ppEditorial } from "@/lib/font";
 export const HeroSection = () => {
   return (
-    <div className="relative w-[95%] max-w-[1400px] overflow-hidden">
-      <section className="flex flex-col items-center rounded-2xl border bg-[#F6F6F8] sm:p-0 md:p-4">
+    <div className="relative w-full sm:w-[95%] max-w-[1400px] overflow-hidden">
+      <section className="flex flex-col items-center sm:rounded-2xl sm:border bg-[#F6F6F8] sm:p-0 md:p-4">
         <div className="absolute flex h-full w-full gap-8 overflow-hidden opacity-55">
           {Array.from({ length: 3 }).map((_, i) => (
             <DotPattern
@@ -24,10 +24,17 @@ export const HeroSection = () => {
         <div
           className={`z-30 mt-6 flex flex-col items-center justify-center capitalize ${ppEditorial.className}`}
         >
-          <h1 className="text-black sm:text-5xl lg:text-6xl xl:text-7xl">
-            Convert LinkedIn Profile into{" "}
+
+          <h1 className="text-black sm:hidden text-4xl mt-12">
+            Convert LinkedIn Profile
           </h1>
-          <h1 className="text-black sm:text-5xl lg:text-6xl xl:text-7xl">
+          <h1 className="text-black sm:hidden text-4xl">
+            Into Web Portfolio
+          </h1>
+          <h1 className="text-black hidden sm:block sm:text-5xl lg:text-6xl xl:text-7xl">
+            Convert LinkedIn Profile Into{" "}
+          </h1>
+          <h1 className="text-black hidden sm:block sm:text-5xl lg:text-6xl xl:text-7xl">
             Web Portfolio{" "}
           </h1>
         </div>
@@ -40,11 +47,11 @@ export const HeroSection = () => {
         </div>
         <img
           src="/cursor-4.png"
-          className="absolute -bottom-6 right-2 z-20 h-48 w-auto -rotate-12 md:bottom-4  lg:bottom-10 lg:right-10 lg:mb-12 lg:mr-12"
+          className="hidden sm:block absolute -bottom-6 right-2 z-20 h-48 w-auto -rotate-12 md:bottom-4  lg:bottom-10 lg:right-10 lg:mb-12 lg:mr-12"
         />
         <img
           src="/linkedin.png"
-          className="absolute -bottom-8 -left-12 z-20 h-48 w-auto rotate-12 md:bottom-4 md:left-2 lg:bottom-10 lg:left-10 lg:mb-12 lg:ml-6"
+          className="hidden sm:block absolute -bottom-8 -left-12 z-20 h-48 w-auto rotate-12 md:bottom-4 md:left-2 lg:bottom-10 lg:left-10 lg:mb-12 lg:ml-6"
         />
         <img
           src="/website-1.png"
