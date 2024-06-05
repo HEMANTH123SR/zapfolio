@@ -1,6 +1,5 @@
 "use client";
 import { InfiniteMovingCards } from "@/components/component/infinite-moving-cards";
-import { ppEditorial } from "@/lib/font";
 const testimonials = [
     {
         quote:
