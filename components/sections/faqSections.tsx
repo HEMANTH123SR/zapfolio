@@ -6,10 +6,10 @@ import {
 } from "@/components/ui/accordion";
 export const FaqSection = () => {
     return (
-        <section className="w-[95%] max-w-[1400px] flex flex-col items-center justify-between rounded-xl border bg-[#F6F6F8] py-16">
+        <section className="w-full sm:w-[95%] max-w-[1400px] flex flex-col items-center justify-between sm:rounded-xl sm:border bg-[#F6F6F8] py-16">
 
             <h1 className="mb-8 text-3xl md:text-4xl lg:text-5xl font-semibold text-black">Any questions?</h1>
-            <Accordion type="single" collapsible className="w-full xl:w-10/12 px-5">
+            <Accordion type="single" collapsible className="w-full xl:w-10/12  sm:px-5">
                 <AccordionItem value="item-1">
                     <AccordionTrigger>What is Webpolio?</AccordionTrigger>
                     <AccordionContent>
