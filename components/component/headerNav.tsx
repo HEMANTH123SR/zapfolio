@@ -9,7 +9,7 @@ export const HeaderNav = () => {
           <Logo />
           <h1 className="cursor-pointer  font-semibold ">Webpolio </h1>
         </Link>
-        <nav className="flex justify-center items-center text-sm space-x-4 font-[600] text-[#868686]">
+        <nav className="hidden sm:flex justify-center items-center text-sm space-x-4 font-[600] text-[#868686]">
           <Link href={"/examples"}>Examples</Link>
           <Link href={"/themes"}>Themes</Link>
           <Link href={"/pricing"}>Pricing</Link>
