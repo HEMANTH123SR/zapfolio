@@ -6,7 +6,7 @@ export const Logo = () => {
         //     <div className="h-[7px] w-[22px] rounded-full bg-white"></div>
         //     <div className="h-[5px] w-[13px] rounded-full bg-white"></div>
         // </div>
-        <img src="/logo3.png" className="rounded-2xl h-10 w-10 border border-[#0010C4]" />
+        <img src="/logo3.png" className="rounded-2xl h-10 w-10 border border-[#FF560E]" />
 
     );
 };

@@ -3,7 +3,7 @@ export const Fotter = () => {
         <footer className="sm:mb-8 flex w-full sm:w-[95%] max-w-[1400px] flex-col items-center justify-between sm:rounded-xl sm:border bg-[#F6F6F8] pt-16">
             <div className="flex w-full justify-between px-7 sm:px-12 text-black">
                 <div className="flex flex-col space-y-4 lg:space-y-6">
-                    <span className="font-semibold text-[#0010C4]">{`{ }  Get Started`}</span>
+                    <span className="font-semibold text-[#FF560E]">{`{ }  Get Started`}</span>
                     <span className="cursor-pointer hover:underline text-sm md:test-base">
                         Sign Up for Webpolio
                     </span>
@@ -15,13 +15,13 @@ export const Fotter = () => {
                     </span>
                 </div>
                 <div className="hidden sm:flex flex-col space-y-4 lg:space-y-6">
-                    <span className="font-semibold text-[#0010C4]">{`{ }  Resources`}</span>
+                    <span className="font-semibold text-[#FF560E]">{`{ }  Resources`}</span>
                     <span className="cursor-pointer hover:underline text-sm md:test-base">Help Center</span>
                     <span className="cursor-pointer hover:underline text-sm md:test-base">Blog</span>
                     <span className="cursor-pointer hover:underline text-sm md:test-base">Documentation</span>
                 </div>
                 <div className="flex flex-col space-y-4 lg:space-y-6">
-                    <span className="font-semibold text-[#0010C4]">{`{ }  Company`}</span>
+                    <span className="font-semibold text-[#FF560E]">{`{ }  Company`}</span>
                     <span className="cursor-pointer hover:underline text-sm md:test-base">About Us</span>
                     <span className="cursor-pointer hover:underline text-sm md:test-base">Privacy Policy</span>
                     <span className="cursor-pointer hover:underline text-sm md:test-base">
@@ -29,14 +29,14 @@ export const Fotter = () => {
                     </span>
                 </div>
                 <div className="hidden flex-col space-y-6 xl:flex">
-                    <span className="font-semibold text-[#0010C4]">{`{ }  Question`}</span>
+                    <span className="font-semibold text-[#FF560E]">{`{ }  Question`}</span>
                     <span className="cursor-pointer hover:underline text-sm md:test-base">
                         hemanthsrdev@gmail.com
                     </span>
                 </div>
             </div>
             <div className="my-7"></div>
-            <div className="flex w-full items-center justify-center sm:justify-between px-16 py-5 text-white bg-[#0010C4] sm:rounded-b-xl">
+            <div className="flex w-full items-center justify-center sm:justify-between px-16 py-5 text-white bg-[#FF560E] sm:rounded-b-xl">
                 <span>© webpolio 2024</span>
                 <span className="hidden sm:block">Designed by the Webpolio Team</span>
             </div>
