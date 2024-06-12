@@ -18,7 +18,7 @@ export const HeroSection = () => {
           ))}
         </div>
         <div className="h-20"></div>
-        <span className="z-20 flex cursor-pointer items-center justify-center space-x-2 rounded-full border-2 border-[#FF560E] bg-white px-4 py-1.5 text-sm text-black">
+        <span className="z-20 flex cursor-pointer items-center justify-center space-x-2 rounded-full border-2 border-[#0010C4] bg-white px-4 py-1.5 text-sm text-black">
           LinkedIn Meets Web Portfolio
         </span>
         <div

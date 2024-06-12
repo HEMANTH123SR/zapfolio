@@ -10,7 +10,7 @@ export const ExampleSection = () => {
             <p className="mt-2 text-sm text-slate-600  lg:hidden">See how others showcase their professional journey</p>
             <Link
                 href={"/examples"}
-                className="my-5 rounded-full bg-[#FF560E] px-3 py-1.5 text-sm text-white hover:scale-105"
+                className="my-5 rounded-full bg-[#0010C4] px-3 py-1.5 text-sm text-white hover:scale-105"
             >
                 View More Examples
             </Link>

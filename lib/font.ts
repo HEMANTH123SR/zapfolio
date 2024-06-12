@@ -10,4 +10,3 @@ export const ppEditorial = localFont({
     display: "swap",
   });
 
-//PPEditorialNew-Regular.ttf

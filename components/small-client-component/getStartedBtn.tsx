@@ -54,7 +54,7 @@ export const GetStartedBtn = () => {
             <button
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                className="text-white px-6  py-2 border  bg-[#FF560E] rounded-xl flex justify-center items-center space-x-3.5  font-semibold cursor-pointer"
+                className="text-white px-6  py-2 border  bg-[#0010C4] rounded-xl flex justify-center items-center space-x-3.5  font-semibold cursor-pointer"
             >
                 Get Started
                 <ArrowRight

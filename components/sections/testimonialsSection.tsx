@@ -35,7 +35,7 @@ const testimonials = [
 export const TestimonialsSection = () => {
     return (
         <section className="relative w-full max-w-[1400px] overflow-hidden antialiased sm:mx-8 sm:w-[95%]">
-            <div className="flex flex-col items-center justify-between sm:rounded-xl sm:border bg-[#FF560E] pb-8 pt-12">
+            <div className="flex flex-col items-center justify-between sm:rounded-xl sm:border bg-[#0010C4] pb-8 pt-12">
                 <h1
                     className={` mb-8 overflow-hidden hidden sm:block sm:text-3xl font-semibold text-white md:text-4xl lg:text-5xl`}
                 >
