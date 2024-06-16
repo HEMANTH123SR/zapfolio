@@ -1,24 +1,35 @@
+"use client";
+import { SignedIn, SignInButton, SignedOut, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import { Logo } from "@/components/component/logo";
 export const HeaderNav = () => {
   return (
-    <header className="flex w-full max-w-[1550px] justify-between items-center px-7 p-5 text-black">
+    <header className="flex w-full max-w-[1550px] items-center justify-between p-5 px-7 text-black">
       {/* left navigation consist of logo and navigation links  */}
-      <div className="flex justify-center items-center space-x-14">
-        <Link className="flex justify-center items-center space-x-2" href={"/"}>
+      <div className="flex items-center justify-center space-x-14">
+        <Link className="flex items-center justify-center space-x-2" href={"/"}>
           <Logo />
-          <h1 className="cursor-pointer  font-semibold ">Webpolio </h1>
+          <h1 className="cursor-pointer font-semibold">Webpolio </h1>
         </Link>
-        <nav className="hidden sm:flex justify-center items-center text-sm space-x-4 font-[600] text-[#868686]">
+        <nav className="hidden items-center justify-center space-x-4 text-sm font-[600] text-[#868686] sm:flex">
           <Link href={"/examples"}>Examples</Link>
           <Link href={"/themes"}>Themes</Link>
           <Link href={"/pricing"}>Pricing</Link>
         </nav>
       </div>
       {/* right navigation link consist of auth */}
-      <button className="bg-white text-black border px-2.5 py-1 font-semibold rounded-lg ">
-        Sign Up
-      </button>
+
+      <SignedOut>
+        <Link href={"https://premium-coral-66.accounts.dev/sign-in"} className="bg-white text-black border px-2.5 py-1 font-semibold rounded-lg ">
+          Sign Up
+        </Link>
+      </SignedOut>
+      <SignedIn>
+        <UserButton />
+      </SignedIn>
     </header>
   );
 };
+
+
+//https://premium-coral-66.accounts.dev/sign-in?redirect_url=http%3A%2F%2Flocalhost%3A3000%2F

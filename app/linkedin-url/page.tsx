@@ -36,10 +36,7 @@ const LinkedinUrlAndJobTitle = () => {
                 </div>
             </div>
             <div className="w-2/5 flex justify-center items-center">
-                {/* <img className="w-3/5 h-auto -rotate-12" src="./cursor-4.png" /> */}
                 <img className="w-4/5 h-auto  " src="./linkedin.png" />
-                {/* <img className="w-4/5 h-auto  " src="./orange-monster.png" /> */}
-
             </div>
         </div>
     );

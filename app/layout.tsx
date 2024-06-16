@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton
+} from "@clerk/nextjs"
 import { HeaderNav } from "@/components/component/headerNav"
 import { Fotter } from "@/components/component/fotter"
 import { euclid } from "@/lib/font"
@@ -14,12 +21,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${euclid.className} flex flex-col justify-center items-center`}>
-        <HeaderNav />
-        {children}
-        <Fotter />
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={`${euclid.className} flex flex-col justify-center items-center`}>
+          <HeaderNav />
+          {children}
+          <Fotter />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
