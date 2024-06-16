@@ -1,8 +1,9 @@
-"use client";
-import { SignedIn, SignInButton, SignedOut, UserButton } from "@clerk/nextjs";
+
+import { SignedIn, SignedOut, UserButton, } from "@clerk/nextjs";
 import Link from "next/link";
 import { Logo } from "@/components/component/logo";
 export const HeaderNav = () => {
+
   return (
     <header className="flex w-full max-w-[1550px] items-center justify-between p-5 px-7 text-black">
       {/* left navigation consist of logo and navigation links  */}
@@ -32,4 +33,3 @@ export const HeaderNav = () => {
 };
 
 
-//https://premium-coral-66.accounts.dev/sign-in?redirect_url=http%3A%2F%2Flocalhost%3A3000%2F

@@ -1,10 +1,10 @@
-"use client";
+
+import { currentUser } from "@clerk/nextjs/server";
 import Link from "next/link";
-import { useState } from "react";
 
-const LinkedinUrlAndJobTitle = () => {
-    const [linkedUrl, setLinkedinUrl] = useState<string>();
-
+const LinkedinUrlAndJobTitle = async () => {
+    const user = await currentUser();
+    console.log(user);
     return (
         <div className="flex h-[85vh] w-full  items-center justify-center  capitalize px-14">
             <div className=" flex  w-3/5 flex-col items-start justify-center text-black">
