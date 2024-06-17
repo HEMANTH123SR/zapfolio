@@ -4,28 +4,42 @@ import Link from "next/link";
 
 const Themes = () => {
     return (
-        <main className="flex w-full justify-center items-center">
-            <div className="  flex min-h-screen w-full px-8 pb-12 pt-3 capitalize">
+        <main className="flex w-full items-center justify-center">
+            <div className="flex min-h-screen w-full max-w-[1400px] px-1.5 pb-12 pt-3 capitalize sm:px-8">
                 <div className="flex w-full flex-col items-center rounded-xl border py-12">
-                    <h1 className="text-5xl font-semibold">Zapfolio Themes</h1>
-                    <p className="my-2 text-slate-600">
-                        pick a theme that matches your vibe , adjust the data according to you
+                    <h1 className="text-4xl font-semibold md:text-5xl lg:text-6xl">
+                        Zapfolio Themes
+                    </h1>
+                    <p className="my-2 hidden text-slate-600 sm:block sm:text-sm lg:text-base">
+                        pick a theme that matches your vibe , adjust the data according to
+                        you
                     </p>
+
+                    <p className="my-2 text-xs sm:hidden">
+                        pick a theme that matches your vibe
+                    </p>
+
                     <Tabs
                         defaultValue="portfolio"
                         className="flex w-full flex-col items-center justify-center"
                     >
                         <TabsList className="my-8">
-                            <TabsTrigger value="portfolio" className="px-8 text-base">
+                            <TabsTrigger
+                                value="portfolio"
+                                className="text-sm md:px-4 md:text-sm lg:px-8 lg:text-base"
+                            >
                                 Portfolio Themes
                             </TabsTrigger>
-                            <TabsTrigger value="bussiness page" className="px-8 text-base">
+                            <TabsTrigger
+                                value="bussiness page"
+                                className="text-sm md:px-4 md:text-sm lg:px-8 lg:text-base"
+                            >
                                 Bussiness Pages
                             </TabsTrigger>
                         </TabsList>
                         <TabsContent
                             value="portfolio"
-                            className="grid gap-x-7 gap-y-12 px-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-y-20"
+                            className="grid gap-x-7 gap-y-12 px-5 sm:grid-cols-2 xl:grid-cols-3 xl:gap-y-20"
                         >
                             {[
                                 {
@@ -74,11 +88,11 @@ const Themes = () => {
                                 <Link
                                     href={`themes/${theme.themeName}`}
                                     key={theme.themeName}
-                                    className="flex w-full flex-col items-center justify-center space-y-2  p-3"
+                                    className="flex w-full flex-col items-center justify-center space-y-2 p-3"
                                 >
                                     <img
                                         src={`${theme.image}`}
-                                        className="h-auto w-full border shadow-lg"
+                                        className=" h-auto border shadow-lg  md:w-11/12 lg:w-9/12 xl:w-full"
                                     />
                                     <span className="font-semibold text-black">
                                         {theme.themeName}
@@ -86,8 +100,13 @@ const Themes = () => {
                                 </Link>
                             ))}
                         </TabsContent>
-                        <TabsContent value="bussiness page">
-                            Change your password here.
+                        <TabsContent value="bussiness page" className="flex justify-center items-center">
+                            <h1 className="bg-gradient-to-r from-[#FF560E] via-[#FFD439] to-[#FF7A00] sm:inline-block text-transparent bg-clip-text hidden  sm:text-6xl md:text-7xl lg:text-8xl font-semibold mt-6 pb-5">Comming Soon</h1>
+                            <div className="flex flex-col  justify-center items-center">
+                                <h1 className="bg-gradient-to-r from-[#FF560E] via-[#FFD439] to-[#FF7A00] inline-block text-transparent bg-clip-text sm:hidden  font-semibold mt-6 text-5xl pb-2">Comming</h1>
+                                <h1 className="bg-gradient-to-r from-[#FF560E] via-[#FFD439] to-[#FF7A00] inline-block text-transparent bg-clip-text sm:hidden  font-semibold text-5xl pb-5">Soon</h1>
+                            </div>
+
                         </TabsContent>
                     </Tabs>
                 </div>
@@ -97,3 +116,6 @@ const Themes = () => {
 };
 
 export default Themes;
+
+
+//background: linear-gradient(220.55deg, #FFD439 0%, #FF7A00 100%);
