@@ -1,45 +1,28 @@
-
 import { currentUser } from "@clerk/nextjs/server";
 import Link from "next/link";
-
 const LinkedinUrlAndJobTitle = async () => {
     const user = await currentUser();
     console.log(user);
     return (
-        <div className="flex h-[85vh] w-full  items-center justify-center  capitalize px-14">
-            <div className=" flex  w-3/5 flex-col items-start justify-center text-black">
-                <h1 className="text-6xl font-semibold">add your linkedin url</h1>
-                <p className="mt-1.5 text-sm text-slate-400">
-                    Example of a linkedin url{" "}
-                    <span className="lowercase">
-                        https://www.linkedin.com/in/hemanth-gowda-31a7532a7/
-                    </span>
-                </p>
-                <Link
-                    href={"/help-linkedin-url"}
-                    className="text-sm text-black underline mt-3"
-                >
-                    Learn how to get your linkedin url
-                </Link>
-                <input
-                    type="text"
-                    className="mt-10 w-10/12 border-b-[2px] pb-2 border-[#FF560E] text-4xl outline-none
-
-                    "
-                    placeholder="Linkedin Url"
-                />
-                <div className="flex space-x-6 justify-center items-center mt-10">
-                    <button className="py-1 px-3 bg-[#FF560E] text-white   rounded-sm text-lg">
-                        CONTINUE
-                    </button>
-                    <button className="py-1 px-3 text-[#FF560E]   rounded-sm text-lg">SKIP</button>
+        <main className="w-full px-8">
+            <div className="flex w-full justify-center rounded-lg border bg-[#FF560E] p-14">
+                <div className="flex pb-14 w-[600px] flex-col items-center border shadow-2xl   rounded-lg bg-white">
+                    <img src="/zapfolio-logo/2.png" className="w-1/4 py-4" />
+                    <div className="w-full border"></div>
+                    <h1
+                        className={`mt-14 mb-7 text-4xl  text-[#FF560E] font-semibold`}
+                    >
+                        Enter Your Linkedin Url
+                    </h1>
+                    <input className="w-8/12 bg-[#F1F4F9] text-black px-5 p-2 border rounded-md" placeholder="https://www.linkedin.com/in/yourprofile" />
+                    <Link className="underline text-sm my-6 text-[#666C7E]" href={"/find-linkedin-url"} >How do I find my LinkedIn URL?</Link>
+                    <button className="bg-[#FF560E] rounded-md text-white text-lg px-10 font-semibold py-1.5">Continue</button>
                 </div>
             </div>
-            <div className="w-2/5 flex justify-center items-center">
-                <img className="w-4/5 h-auto  " src="./linkedin.png" />
-            </div>
-        </div>
+        </main>
     );
 };
+
+//How do I find my LinkedIn URL?
 
 export default LinkedinUrlAndJobTitle;
