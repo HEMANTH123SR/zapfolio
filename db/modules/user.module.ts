@@ -1,6 +1,6 @@
-
 import mongoose from "mongoose";
-
+import { linkedinUserDataSchema } from "@/db/modules/user.linkedinData";
+import { themesSchema } from "@/db/modules/user.themes";
 const userModule = new mongoose.Schema({
   userId: {
     type: String,
@@ -23,5 +23,16 @@ const userModule = new mongoose.Schema({
     type: String,
     default: null,
   },
- 
+  linkedinUserData: {
+    type: linkedinUserDataSchema,
+    default: null,
+  },
+  themesDashboard: {
+    type: themesSchema,
+    default: null,
+  },
 });
+
+const User = mongoose.model("User", userModule);
+
+module.exports = User;

@@ -240,7 +240,7 @@ const ProjectSchema = new Schema({
 });
 
 // Schema for user
-const UserSchema = new Schema(
+export const linkedinUserDataSchema = new Schema(
   {
     urn: { type: String, unique: true, required: true },
     username: { type: String, unique: true, required: true },
@@ -322,6 +322,4 @@ const UserSchema = new Schema(
   { timestamps: true },
 );
 
-const User = mongoose.model("User", UserSchema);
 
-module.exports = User;
