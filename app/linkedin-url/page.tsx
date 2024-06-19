@@ -2,10 +2,10 @@ import { currentUser } from "@clerk/nextjs/server";
 import Link from "next/link";
 const LinkedinUrlAndJobTitle = async () => {
     const user = await currentUser();
-    console.log(user);
+
     return (
-        <main className="mb-12 mt-2 flex w-full justify-center items-center h-[70vh] sm:h-auto sm:px-8 border-t-2">
-            <div className="flex w-full max-w-[1400px] justify-center   sm:rounded-xl sm:border sm:bg-[#FF560E] sm:pb-14 sm:pt-14">
+        <main className="mb-12 mt-2 flex w-full justify-center items-center h-[70vh] sm:h-auto sm:px-8 border-t-2 sm:border-none">
+            <div className="flex w-full max-w-[1400px] justify-center   sm:rounded-xl sm:border  sm:bg-[url('/bggif.gif')] sm:bg-cover   sm:pb-14 sm:pt-14">
                 <div className="flex w-full flex-col items-center rounded-lg bg-white pb-14 sm:w-11/12 sm:border sm:shadow-2xl md:w-[600px]">
                     <img
                         src="/zapfolio-logo/2.png"
