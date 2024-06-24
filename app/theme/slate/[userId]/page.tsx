@@ -1,9 +1,9 @@
 import React from 'react'
 
 const Slate = () => {
-  return (
-    <div>slate</div>
-  )
+    return (
+        <div>block</div>
+    )
 }
 
 export default Slate
