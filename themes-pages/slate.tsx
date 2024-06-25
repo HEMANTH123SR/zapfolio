@@ -7,12 +7,12 @@ const poppinsBold = Poppins({ subsets: ["latin"], weight: "500" });
 const poppinsExtraBold = Poppins({ subsets: ["latin"], weight: "600" });
 const rammetto_one = Rammetto_One({ subsets: ["latin"], weight: "400" });
 export const Slate = () => {
-    const user = userDetailedObject[1];
+    const user = userDetailedObject[0];
     return (
         <div
-            className={`flex h-full w-full flex-col space-y-6 bg-white pl-7 pr-5 pt-7 text-[#333333] md:pl-20 md:pt-16 ${poppins.className} `}
+            className={`flex h-full w-full flex-col space-y-6 bg-white pl-7 pr-5 pt-7 text-[#333333] md:pl-24 md:pt-16  `}
         >
-            <div className="flex items-center space-x-4 sm:space-x-8">
+            <div className="flex items-center space-x-4 sm:space-x-8 mt-2">
                 <img
                     src={user.profilePicture}
                     className="h-20 w-20 rounded-2xl sm:h-28 sm:w-28"
@@ -50,8 +50,10 @@ export const Slate = () => {
                                     className={`flex h-auto w-52 cursor-pointer flex-col items-center space-y-1 rounded-xl border p-4`}
                                 >
                                     <img
-                                        src={data.companyLogo ? data.companyLogo :
-                                            "https://icons.veryicon.com/png/o/business/oa-attendance-icon/company-27.png"
+                                        src={
+                                            data.companyLogo
+                                                ? data.companyLogo
+                                                : "https://icons.veryicon.com/png/o/business/oa-attendance-icon/company-27.png"
                                         }
                                         className="h-20 w-20 rounded-full"
                                     />
@@ -83,8 +85,27 @@ export const Slate = () => {
                 </div>
             )}
 
+            {user.projects && (
+                <div className="flex flex-col space-y-5 pt-6 sm:w-2/3">
+                    <h2 className={`pl-2 text-2xl ${rammetto_one.className}`}>
+                        Projects
+                    </h2>
+
+                    <div className="flex flex-row flex-wrap gap-5">
+                        {user.projects.map((data, index) => (
+                            <div key={index} className="flex flex-col">
+                                <h3 className={`font-semibold ${poppinsBold.className}`}>
+                                    {data.title}
+                                </h3>
+                                <span className="text-sm">{data.description}</span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )}
+
             {user.educations && (
-                <div className="flex flex-col space-y-5 pt-6">
+                <div className="flex flex-col space-y-5 pt-6 sm:w-2/3">
                     <h2 className={`pl-2 text-2xl ${rammetto_one.className}`}>
                         Education
                     </h2>
@@ -97,7 +118,7 @@ export const Slate = () => {
                                 >
                                     <GraduationCap
                                         strokeWidth={1.2}
-                                        className="w-16 py-2 h-16 min-w-16 min-h-16  rounded-md  bg-white text-black  border-2 border-[#333333]"
+                                        className="h-16 min-h-16 w-16 min-w-16 rounded-md border-2 border-[#333333] bg-white py-2 text-black"
                                     />
                                     <div className="flex flex-col items-start justify-center">
                                         <h3 className={`${poppinsBold.className} `}>
@@ -122,7 +143,7 @@ export const Slate = () => {
             )}
 
             {user.certifications && (
-                <div className="flex flex-col space-y-5 pt-6">
+                <div className="flex flex-col space-y-5 pt-6 sm:w-2/3">
                     <h2 className={`pl-2 text-2xl ${rammetto_one.className}`}>
                         Certifications
                     </h2>
@@ -154,7 +175,7 @@ export const Slate = () => {
             )}
 
             {user.courses && (
-                <div className="flex flex-col space-y-5 pt-6">
+                <div className="flex flex-col space-y-5 pt-6 sm:w-2/3">
                     <h2 className={`pl-2 text-2xl ${rammetto_one.className}`}>Courses</h2>
 
                     {user.courses.map((course, index) => (
@@ -172,7 +193,7 @@ export const Slate = () => {
             )}
 
             {user.skills && (
-                <div className="flex flex-col space-y-5 pt-6">
+                <div className="flex flex-col space-y-5 pt-6 sm:w-2/3">
                     <h2 className={`pl-2 text-2xl ${rammetto_one.className}`}>Skills</h2>
                     <div className="flex flex-col space-y-4">
                         {user.skills.map((skill, index) => (
@@ -191,7 +212,7 @@ export const Slate = () => {
             )}
 
             {user.languages && (
-                <div className="flex flex-col space-y-5 pt-6">
+                <div className="flex flex-col space-y-5 pt-6 sm:w-2/3">
                     <h2 className={`pl-2 text-2xl ${rammetto_one.className}`}>
                         Languages
                     </h2>
@@ -220,5 +241,3 @@ export const Slate = () => {
         </div>
     );
 };
-
-
