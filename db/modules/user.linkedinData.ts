@@ -264,10 +264,6 @@ export const linkedinUserDataSchema = new Schema(
       type: String,
       required: true,
     },
-    backgroundImage: {
-      type: String,
-      default: null,
-    },
     summary: {
       type: String,
       required: true,

@@ -1,8 +1,17 @@
-
+"use client";
 import { SignedIn, SignedOut, UserButton, } from "@clerk/nextjs";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Logo } from "@/components/component/logo";
 export const HeaderNav = () => {
+  const pathName = usePathname();
+  const splitedPathName = pathName.split("/");
+  const applyThemeEffect =
+    splitedPathName[1] === "themes" && splitedPathName.length === 4;
+
+  if (applyThemeEffect) {
+    return (<></>)
+  }
 
   return (
     <header className="flex w-full max-w-[1550px] items-center justify-between p-5 px-7 text-black">
