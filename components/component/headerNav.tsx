@@ -7,7 +7,7 @@ export const HeaderNav = () => {
   const pathName = usePathname();
   const splitedPathName = pathName.split("/");
   const applyThemeEffect =
-    splitedPathName[1] === "themes" && splitedPathName.length === 4;
+    splitedPathName[1] === "themes" && splitedPathName.length === 3;
 
   if (applyThemeEffect) {
     return (<></>)
