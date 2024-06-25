@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { GraduationCap } from "lucide-react";
 import { Poppins, Rammetto_One } from "next/font/google";
@@ -7,11 +6,11 @@ const poppins = Poppins({ subsets: ["latin"], weight: "300" });
 const poppinsBold = Poppins({ subsets: ["latin"], weight: "500" });
 const poppinsExtraBold = Poppins({ subsets: ["latin"], weight: "600" });
 const rammetto_one = Rammetto_One({ subsets: ["latin"], weight: "400" });
-const Slate = () => {
-    const user = userDetailedObject[0];
+export const Slate = () => {
+    const user = userDetailedObject[1];
     return (
         <div
-            className={`flex h-full w-full flex-col space-y-6 bg-white pl-7 pr-5 pt-7 text-[#333333] md:pl-44 md:pt-16 ${poppins.className} `}
+            className={`flex h-full w-full flex-col space-y-6 bg-white pl-7 pr-5 pt-7 text-[#333333] md:pl-20 md:pt-16 ${poppins.className} `}
         >
             <div className="flex items-center space-x-4 sm:space-x-8">
                 <img
@@ -96,7 +95,10 @@ const Slate = () => {
                                     key={index}
                                     className="flex items-center justify-start space-x-3"
                                 >
-                                    <GraduationCap className="min-h-8 min-w-8 text-[#333333]" />
+                                    <GraduationCap
+                                        strokeWidth={1.2}
+                                        className="w-16 py-2 h-16 min-w-16 min-h-16  rounded-md  bg-white text-black  border-2 border-[#333333]"
+                                    />
                                     <div className="flex flex-col items-start justify-center">
                                         <h3 className={`${poppinsBold.className} `}>
                                             {data.schoolName}
@@ -131,7 +133,7 @@ const Slate = () => {
                                 className="flex items-center justify-start space-x-3"
                             >
                                 <img
-                                    className="h-16 w-16 rounded-md"
+                                    className="h-16 w-16 rounded-md border"
                                     src={
                                         data.company.logo
                                             ? data.company.logo
@@ -219,4 +221,4 @@ const Slate = () => {
     );
 };
 
-export default Slate;
+
