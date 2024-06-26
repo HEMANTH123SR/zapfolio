@@ -11,9 +11,7 @@ import { userDetailedObject } from "@/lib/test-data"
 export const ZenithBento = () => {
     const user = userDetailedObject[0];
     return (
-        <div className="flex w-full h-full">
-            <iframe src="https://bento-webpolio-i46g.vercel.app/16" className="h-full w-full" />
-        </div>
+        <div className="w-full h-60  p-3  lg:p-6 flex justify-center items-center bg-[#1C1C1C]  md:bg-[#171717] text-white "></div>
     )
 }
 

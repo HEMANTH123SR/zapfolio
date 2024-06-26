@@ -87,7 +87,7 @@ const Themes = async () => {
                                 },
                             ].map((theme) => (
                                 <Link
-                                    href={`themes/${theme.themeName}`}
+                                    href={`themes/${theme.themeName.split(" ").join("-")}`}
                                     key={theme.themeName}
                                     className="flex w-full flex-col items-center justify-center space-y-2 p-3"
                                 >
