@@ -1,11 +1,7 @@
 import React from "react";
 import { GraduationCap } from "lucide-react";
-import { Poppins, Rammetto_One } from "next/font/google";
 import { userDetailedObject } from "@/lib/test-data";
-const poppins = Poppins({ subsets: ["latin"], weight: "300" });
-const poppinsBold = Poppins({ subsets: ["latin"], weight: "500" });
-const poppinsExtraBold = Poppins({ subsets: ["latin"], weight: "600" });
-const rammetto_one = Rammetto_One({ subsets: ["latin"], weight: "400" });
+import { poppinsBold, poppinsExtraBold, rammetto_one } from "@/lib/font"
 export const Slate = () => {
     const user = userDetailedObject[0];
     return (
