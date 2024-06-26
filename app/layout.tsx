@@ -11,7 +11,7 @@ import { HeaderNav } from "@/components/component/headerNav"
 import { Fotter } from "@/components/component/fotter"
 import { euclid } from "@/lib/font"
 export const metadata: Metadata = {
-  title: "webpolio",
+  title: "zapfolio",
   description: "create a porfolio website with linkedin",
 };
 

@@ -18,8 +18,8 @@ export const HeroSection = () => {
           ))}
         </div>
         <div className="h-20"></div>
-        <span className="z-20 flex cursor-pointer items-center justify-center space-x-2 rounded-full border-2 border-[#FF560E] bg-white px-4 py-1.5 text-sm text-black">
-          LinkedIn Meets Web Portfolio
+        <span className="z-20 font-semibold  flex cursor-pointer items-center justify-center space-x-2 rounded-full border-2 border-[#FF560E] bg-white px-4 py-1 text-sm text-black">
+          LinkedIn Meets Zapfolio
         </span>
         <div
           className={`z-30 mt-6 flex flex-col items-center justify-center capitalize ${ppEditorial.className}`}

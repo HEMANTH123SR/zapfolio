@@ -19,7 +19,7 @@ export const HeaderNav = () => {
       <div className="flex items-center justify-center space-x-14">
         <Link className="flex items-center justify-center space-x-2" href={"/"}>
           <Logo />
-          <h1 className="cursor-pointer font-semibold">Webpolio </h1>
+          <h1 className="cursor-pointer font-semibold">Zapfolio </h1>
         </Link>
         <nav className="hidden items-center justify-center space-x-4 text-sm font-[600] text-[#868686] sm:flex">
           <Link href={"/examples"}>Examples</Link>

@@ -7,11 +7,10 @@ export const LinkedinToWebpolio = () => {
                 Build Your Portfolio In 2 Minutes
             </h2>
 
-            <p className="hidden lg:block text-sm mt-2 text-slate-600">
-                Webpolio seamlessly transforms your LinkedIn profile into a captivating
-                web portfolio
+            <p className="hidden lg:block text-sm mt-2 text-center text-slate-600 w-2/3 ">
+                A no-code tool that transforms any LinkedIn page into a clean portfolio website, resume, and landing page for your business site in seconds. All you have to do is enter your LinkedIn URL, and zap!
             </p>
-            <p className='text-sm mt-2 text-slate-600 lg:hidden'>Transforms LinkedIn profile to captivating web portfolio</p>
+            <p className='text-sm mt-2 text-slate-600 lg:hidden'>a no-code tool that transforms any linkedin page into a clean, portfolio website,resume, and landing page for your business site in seconds. all u got do is enter ur linkedin url.and zap!</p>
             <div className="flex flex-col space-y-10 sm:space-y-0 sm:flex-row sm:space-x-8 lg:space-x-12 justify-center items-center mt-16">
 
                 <div className="flex flex-col justify-center items-center space-y-2">
@@ -30,7 +29,7 @@ export const LinkedinToWebpolio = () => {
                 <ArrowRight className='h-10 w-10 hidden sm:block' />
 
                 <div className="flex flex-col justify-center items-center space-y-2">
-                    <img src="/logo2.png" className="h-12 w-12 rounded-xl" />
+                    <img src="/logo3.png" className="h-12 w-12 rounded-xl" />
                     <div className='flex flex-col border border-t-0 shadow-2xl'>
                         <div className='bg-white border  h-4  px-4 flex items-center space-x-1.5'>
                             <div className='h-1.5 w-1.5 bg-[#C7C6C6] rounded-full'></div>
