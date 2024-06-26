@@ -12,6 +12,3 @@ export const ppEditorial = localFont({
   });
 
 
-export  const poppinsBold = Poppins({ subsets: ["latin"], weight: "500" });
-export const poppinsExtraBold = Poppins({ subsets: ["latin"], weight: "600" });
-export const rammetto_one = Rammetto_One({ subsets: ["latin"], weight: "400" });
