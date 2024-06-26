@@ -58,14 +58,14 @@ const Themes = async () => {
                                     premimum: false,
                                 },
                                 {
-                                    themeName: "zenith bento",
+                                    themeName: "bentodark",
                                     image:
                                         "/themes/zenith-bento.png",
                                     preference: "",
                                     premimum: false,
                                 },
                                 {
-                                    themeName: "windows 95",
+                                    themeName: "windows-95",
                                     image:
                                         "/themes/windows-95.png",
                                     preference: "",
@@ -87,7 +87,7 @@ const Themes = async () => {
                                 },
                             ].map((theme) => (
                                 <Link
-                                    href={`themes/${theme.themeName.split(" ").join("-")}`}
+                                    href={`themes/${theme.themeName}`}
                                     key={theme.themeName}
                                     className="flex w-full flex-col items-center justify-center space-y-2 p-3"
                                 >
