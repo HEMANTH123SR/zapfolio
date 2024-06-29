@@ -2,6 +2,8 @@
 import { SignedIn, SignedOut, UserButton, } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { NavigationMenuComponent } from "@/components/component/navigation-menu"
+
 import { Logo } from "@/components/component/logo";
 export const HeaderNav = () => {
   const pathName = usePathname();
@@ -21,11 +23,14 @@ export const HeaderNav = () => {
           <Logo />
           <h1 className="cursor-pointer font-semibold">Zapfolio </h1>
         </Link>
-        <nav className="hidden items-center justify-center space-x-4 text-sm font-[600] text-[#868686] sm:flex">
+        {/* <nav className="hidden items-center justify-center space-x-4 text-sm font-[600] text-[#868686] sm:flex">
           <Link href={"/examples"}>Examples</Link>
           <Link href={"/themes"}>Themes</Link>
           <Link href={"/pricing"}>Pricing</Link>
-        </nav>
+        </nav> */}
+        <div className="">
+          <NavigationMenuComponent />
+        </div>
       </div>
       {/* right navigation link consist of auth */}
 
@@ -40,5 +45,8 @@ export const HeaderNav = () => {
     </header>
   );
 };
+
+
+
 
 

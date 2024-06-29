@@ -1,8 +1,26 @@
+"use client"
 import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Link from "next/link";
+import { useSearchParams } from 'next/navigation'
 
-const Themes = async () => {
+
+const Themes = () => {
+    const searchParams = useSearchParams()
+    let queryValue: string;
+    switch (searchParams.get('q')) {
+        case "resume":
+            queryValue = "resume";
+            break;
+        case "bussiness-page":
+            queryValue = "bussiness page";
+            break;
+        default:
+            queryValue = "portfolio"
+    }
+
+    console.log(queryValue);
+
 
     return (
         <main className="flex w-full items-center justify-center">
@@ -21,22 +39,31 @@ const Themes = async () => {
                     </p>
 
                     <Tabs
-                        defaultValue="portfolio"
+                        defaultValue={queryValue}
                         className="flex w-full flex-col items-center justify-center"
+
                     >
-                        <TabsList className="my-8">
+                        <TabsList className="my-8" >
                             <TabsTrigger
                                 value="portfolio"
                                 className="text-sm md:px-4 md:text-sm lg:px-8 lg:text-base"
+
                             >
                                 Portfolio Themes
+                            </TabsTrigger>
+                            <TabsTrigger
+                                value="resume"
+                                className="text-sm md:px-4 md:text-sm lg:px-8 lg:text-base"
+                            >
+                                Resume
                             </TabsTrigger>
                             <TabsTrigger
                                 value="bussiness page"
                                 className="text-sm md:px-4 md:text-sm lg:px-8 lg:text-base"
                             >
-                                Bussiness Pages
+                                Bussiness Page
                             </TabsTrigger>
+
                         </TabsList>
                         <TabsContent
                             value="portfolio"
@@ -117,6 +144,23 @@ const Themes = async () => {
                                 </h1>
                             </div>
                         </TabsContent>
+                        <TabsContent
+                            value="resume"
+                            className="flex items-center justify-center"
+                        >
+                            <h1 className="mt-6 hidden bg-gradient-to-r from-[#FF560E] via-[#FFD439] to-[#FF7A00] bg-clip-text pb-5 font-semibold text-transparent sm:inline-block sm:text-6xl md:text-7xl lg:text-8xl">
+                                Comming Soon
+                            </h1>
+                            <div className="flex flex-col items-center justify-center">
+                                <h1 className="mt-6 inline-block bg-gradient-to-r from-[#FF560E] via-[#FFD439] to-[#FF7A00] bg-clip-text pb-2 text-5xl font-semibold text-transparent sm:hidden">
+                                    Comming
+                                </h1>
+                                <h1 className="inline-block bg-gradient-to-r from-[#FF560E] via-[#FFD439] to-[#FF7A00] bg-clip-text pb-5 text-5xl font-semibold text-transparent sm:hidden">
+                                    Soon
+                                </h1>
+                            </div>
+                        </TabsContent>
+
                     </Tabs>
                 </div>
             </div>
