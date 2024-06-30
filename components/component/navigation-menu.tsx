@@ -90,7 +90,6 @@ export const NavigationMenuComponent = () => {
                         </ul>
                     </NavigationMenuContent>
                 </NavigationMenuItem>
-
                 <NavigationMenuItem>
                     <Link href="/dashboard" legacyBehavior passHref>
                         <NavigationMenuLink style={{ color: "#868686", fontWeight: "600", fontSize: "0.875rem", lineHeight: "1.25rem" }} className={navigationMenuTriggerStyle()}>
