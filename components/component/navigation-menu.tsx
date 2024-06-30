@@ -17,40 +17,40 @@ import {
 
 const components: { title: string; href: string; description: string }[] = [
     {
-        title: "Alert Dialog",
-        href: "/docs/primitives/alert-dialog",
+        title: "Pricing",
+        href: "/pricing",
         description:
-            "A modal dialog that interrupts the user with important content and expects a response.",
+            "View detailed pricing plans and choose the best option for your needs.",
     },
     {
-        title: "Hover Card",
-        href: "/docs/primitives/hover-card",
+        title: "Help",
+        href: "/help",
         description:
-            "For sighted users to preview content available behind a link.",
+            "Get assistance and find answers to common questions about using Zapfolio.",
     },
     {
-        title: "Progress",
-        href: "/docs/primitives/progress",
+        title: "Examples",
+        href: "/examples",
         description:
-            "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+            "See live examples of portfolios, resumes, and landing pages created with Zapfolio.",
     },
     {
-        title: "Scroll-area",
-        href: "/docs/primitives/scroll-area",
-        description: "Visually or semantically separates content.",
+        title: "Feedback",
+        href: "/feedback",
+        description: "Share your thoughts and suggestions to help us improve Zapfolio.",
     },
     {
-        title: "Tabs",
-        href: "/docs/primitives/tabs",
+        title: "Terms Of Service",
+        href: "/terms-of-service",
         description:
-            "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+            "Read our terms and conditions to understand your rights and responsibilities.",
     },
     {
-        title: "Tooltip",
-        href: "/docs/primitives/tooltip",
+        title: "Discount And Offers",
+        href: "/offers",
         description:
-            "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-    },
+            "Discover current discounts and special offers available for Zapfolio users.",
+    }
 ]
 
 
@@ -65,14 +65,14 @@ export const NavigationMenuComponent = () => {
                             <li className="row-span-3">
                                 <NavigationMenuLink asChild>
                                     <Link
-                                        className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md border"
+                                        className="flex h-full w-full select-none flex-col justify-end rounded-md  p-6 no-underline outline-none focus:shadow-md  border   bg-slate-50"
                                         href="/"
                                     >
                                         <img src="/logo3.png" className="h-10 w-10 rounded-xl" />
                                         <div className="mb-2 mt-4 text-lg font-semibold">
                                             zapfolio
                                         </div>
-                                        <p className="text-xs leading-tight text-muted-foreground">
+                                        <p className="text-xs leading-tight text-muted-foreground ">
                                             A no-code tool that transforms any LinkedIn page into a clean portfolio website, resume, and landing page for your business site in seconds.
                                         </p>
                                     </Link>
@@ -91,19 +91,33 @@ export const NavigationMenuComponent = () => {
                     </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
+                    <NavigationMenuTrigger style={{ color: "#868686", fontWeight: "600", fontSize: "0.875rem", lineHeight: "1.25rem" }}>Get Started</NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                            {components.map((component) => (
+                                <ListItem
+                                    key={component.title}
+                                    title={component.title}
+                                    href={component.href}
+                                    className="hover:border hover:bg-white group "
+                                >
+                                    {component.description}
+                                </ListItem>
+                            ))}
+                        </ul>
+                    </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
                     <Link href="/dashboard" legacyBehavior passHref>
                         <NavigationMenuLink style={{ color: "#868686", fontWeight: "600", fontSize: "0.875rem", lineHeight: "1.25rem" }} className={navigationMenuTriggerStyle()}>
                             Dashboard
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <Link href="/dashboard" legacyBehavior passHref>
-                        <NavigationMenuLink style={{ color: "#868686", fontWeight: "600", fontSize: "0.875rem", lineHeight: "1.25rem" }} className={navigationMenuTriggerStyle()}>
-                            Pricing
-                        </NavigationMenuLink>
-                    </Link>
-                </NavigationMenuItem>
+
+
+
             </NavigationMenuList>
         </NavigationMenu>
     )
@@ -119,12 +133,12 @@ const ListItem = React.forwardRef<
                 <a
                     ref={ref}
                     className={cn(
-                        "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+                        "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground ",
                         className
                     )}
                     {...props}
                 >
-                    <div className="text-sm font-medium leading-none">{title}</div>
+                    <div className="text-sm  leading-none font-semibold group-hover:underline">{title}</div>
                     <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                         {children}
                     </p>

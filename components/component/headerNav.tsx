@@ -18,17 +18,12 @@ export const HeaderNav = () => {
   return (
     <header className="flex w-full max-w-[1550px] items-center justify-between p-5 px-7 text-black">
       {/* left navigation consist of logo and navigation links  */}
-      <div className="flex items-center justify-center space-x-14">
+      <div className="flex items-center justify-center space-x-8">
         <Link className="flex items-center justify-center space-x-2" href={"/"}>
           <Logo />
           <h1 className="cursor-pointer font-semibold">Zapfolio </h1>
         </Link>
-        {/* <nav className="hidden items-center justify-center space-x-4 text-sm font-[600] text-[#868686] sm:flex">
-          <Link href={"/examples"}>Examples</Link>
-          <Link href={"/themes"}>Themes</Link>
-          <Link href={"/pricing"}>Pricing</Link>
-        </nav> */}
-        <div className="">
+        <div className="hidden md:block ">
           <NavigationMenuComponent />
         </div>
       </div>

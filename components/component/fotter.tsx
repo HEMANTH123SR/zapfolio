@@ -17,7 +17,7 @@ export const Fotter = () => {
         <div className="flex flex-col space-y-4 lg:space-y-6">
           <span className="font-semibold text-[#FF560E]">{`{ }  Get Started`}</span>
           <span className="md:test-base cursor-pointer text-sm hover:underline">
-            Sign Up for Webpolio
+            Sign Up for zapfolio
           </span>
           <span className="md:test-base cursor-pointer text-sm hover:underline">
             Create Your Web Portfolio
@@ -59,8 +59,8 @@ export const Fotter = () => {
       </div>
       <div className="my-7"></div>
       <div className="flex w-full items-center justify-center bg-[#FF560E] px-16 py-5 text-white sm:justify-between sm:rounded-b-xl">
-        <span>© webpolio 2024</span>
-        <span className="hidden sm:block">Designed by the Webpolio Team</span>
+        <span>© zapfolio 2024</span>
+        <span className="hidden sm:block">Designed by the zapfolio Team</span>
       </div>
     </footer>
   );
