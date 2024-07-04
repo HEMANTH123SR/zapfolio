@@ -1,41 +1,42 @@
-import { ScrollArea } from "@/components/ui/scroll-area";
-
 import { MdDesktopWindows } from "react-icons/md";
 import { FaMobile, FaTablet } from "react-icons/fa";
+import { IoIosRefresh } from "react-icons/io";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
-import { IoIosRefresh } from "react-icons/io";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { ComboboxDemo } from "@/components/component/combox";
 
-export default function RootLayout() {
+
+
+export default function Slate() {
     return (
         <div className="flex h-full w-full">
             <div className="flex h-screen min-w-[300px] max-w-[300px] flex-col border border-t-4 border-t-[#FF560E] bg-[#FAFAFA]">
                 <ScrollArea className="h-full w-full">
                     <div className="flex flex-col items-center">
-                        <div className="flex w-full items-center justify-evenly border-b px-3 py-4">
-                            <div className="cursor-pointer rounded-full border bg-white p-3">
-                                <MdDesktopWindows className="h-5 w-5" />
+                        <div className="flex w-full items-center justify-between border-b px-5 pr-8 py-4">
+                            <IoIosRefresh className="h-7 w-7 cursor-pointer" />
+
+                            <div className="cursor-pointer rounded-full border bg-white p-2.5">
+                                <MdDesktopWindows className="h-4 w-4" />
                             </div>
-                            <div className="cursor-pointer rounded-full border bg-white p-3">
-                                <FaTablet className="h-5 w-5" />
+                            <div className="cursor-pointer rounded-full border bg-white p-2.5">
+                                <FaTablet className="h-4 w-4" />
                             </div>
-                            <div className="cursor-pointer rounded-full border bg-white p-3">
-                                <FaMobile className="h-5 w-5" />
+                            <div className="cursor-pointer rounded-full border bg-white p-2.5">
+                                <FaMobile className="h-4 w-4" />
                             </div>
                         </div>
 
-                        <div className="flex w-full flex-col border-b space-y-3 px-5 py-4 text-[#666666]">
+                        <div className="flex w-full flex-col space-y-3 border-b px-5 py-4 text-[#666666]">
                             <h3 className="text-xs font-semibold">FONTS</h3>
-                            <div className="flex items-center space-x-2 text-xs">
-                                <Switch id="education" />
-                                <Label htmlFor="education">Primary</Label>
-                            </div>
-                            <div className="flex items-center space-x-2 text-xs">
-                                <Switch id="postion" />
-                                <Label htmlFor="postion">Secondary</Label>
-                            </div>
+
+                            <ComboboxDemo title="Selece Primary Font" />
+                            <ComboboxDemo title="Selece Base Font" />
+
+
                         </div>
-                        <div className="flex w-full flex-col border-b space-y-3 px-5 py-4 text-[#666666]">
+                        <div className="flex w-full flex-col space-y-3 border-b px-5 py-4 text-[#666666]">
                             <h3 className="text-xs font-semibold">COMPONENTS</h3>
                             <p className="text-xs">
                                 you can customize what component to show if you dont want to
@@ -79,6 +80,7 @@ export default function RootLayout() {
                             </div>
                         </div>
                     </div>
+
                 </ScrollArea>
                 <div className="flex w-full flex-col items-center justify-center space-y-3 border-t py-6 font-semibold">
                     <button className="w-10/12 rounded-full bg-[#FF560E] py-1.5 text-white">
@@ -89,12 +91,7 @@ export default function RootLayout() {
                     </button>
                 </div>
             </div>
-            <div className="w-full">
-                <iframe
-                    src="https://slate.zapfolio.in/hello"
-                    className="h-screen w-full border-r border-t-4 border-[#FF560E]"
-                />
-            </div>
+            <iframe src="https://slate.zapfolio.in/hello" className="h-screen w-full border-r border-t-4 border-[#FF560E]" />
         </div>
     );
 }

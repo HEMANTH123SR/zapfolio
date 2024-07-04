@@ -1,6 +1,7 @@
 import { GetStartedBtn } from "@/components/small-client-component/getStartedBtn";
 import DotPattern from "@/components/magicui/dot-pattern";
 import { ppEditorial } from "@/lib/font";
+import Link from "next/link"
 export const HeroSection = () => {
   return (
     <div className="relative w-full sm:w-[95%] max-w-[1400px] overflow-hidden">
@@ -43,7 +44,10 @@ export const HeroSection = () => {
           <p> Create a Stunning Portfolio in 2 Clicks</p>
         </div>
         <div className="z-10">
-          <GetStartedBtn />
+          <Link href={"/themes"}>
+            <GetStartedBtn />
+          </Link>
+
         </div>
         <img
           src="/cursor-4.png"

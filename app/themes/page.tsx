@@ -19,7 +19,7 @@ const Themes = () => {
             queryValue = "portfolio"
     }
 
-    console.log(queryValue);
+   
 
 
     return (
@@ -29,7 +29,7 @@ const Themes = () => {
                     <h1 className="text-4xl font-semibold md:text-5xl lg:text-6xl">
                         Zapfolio Themes
                     </h1>
-                    <p className="my-2 hidden text-slate-600 sm:block sm:text-sm lg:text-base">
+                    <p className="my-2 hidden text-slate-600 sm:block sm:text-sm lg:text-base lowercase">
                         pick a theme that matches your vibe , adjust the data according to
                         you
                     </p>
