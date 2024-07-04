@@ -1,7 +1,10 @@
+"use client"
 import { currentUser } from "@clerk/nextjs/server";
 import Link from "next/link";
-const LinkedinUrlAndJobTitle = async () => {
-    const user = await currentUser();
+import { useState } from "react";
+const LinkedinUrlAndJobTitle = () => {
+
+    const [linkedinUrl, setLinkedinUrl] = useState<string | null>(null)
 
     return (
         <main className="mb-12 mt-2 flex w-full justify-center items-center h-[70vh] sm:h-auto sm:px-8 border-t-2 sm:border-none">
@@ -13,20 +16,21 @@ const LinkedinUrlAndJobTitle = async () => {
                     />
                     <div className="w-full border hidden sm:block"></div>
                     <h1
-                        className={`mb-7 mt-14 text-4xl mx-4  font-semibold text-[#FF560E] sm:text-4xl`}
+                        className={`mb-2 mt-14 text-4xl mx-4  font-semibold text-[#FF560E] sm:text-4xl`}
                     >
                         Enter Your Linkedin Profile Url
                     </h1>
-                    <input
-                        className="w-10/12 sm:w-8/12 rounded-md border bg-[#F1F4F9] p-2 px-5 text-black"
-                        placeholder="https://www.linkedin.com/in/yourprofile"
-                    />
                     <Link
-                        className="my-6 text-sm text-[#666C7E] underline"
+                        className=" text-sm lowercase text-[#666C7E] underline"
                         href={"/find-linkedin-url"}
                     >
                         How do I find my LinkedIn URL?
                     </Link>
+                    <input
+                        className="w-10/12 sm:w-8/12 mt-8 mb-4 rounded-md border bg-[#F1F4F9] p-2 px-5 text-black"
+                        placeholder="https://www.linkedin.com/in/yourprofile"
+                    />
+
                     <button className="rounded-md bg-[#FF560E] w-10/12 sm:w-8/12  py-1.5 text-lg font-semibold text-white">
                         Continue
                     </button>
@@ -36,6 +40,6 @@ const LinkedinUrlAndJobTitle = async () => {
     );
 };
 
-//How do I find my LinkedIn URL?
+
 
 export default LinkedinUrlAndJobTitle;
