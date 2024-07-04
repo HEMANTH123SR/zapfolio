@@ -30,7 +30,7 @@ export const HeaderNav = () => {
       {/* right navigation link consist of auth */}
 
       <SignedOut>
-        <Link href={"https://social-hagfish-50.accounts.dev/sign-in?redirect_url=http%3A%2F%2Flocalhost%3A3000%2F"} className="bg-white text-black border px-2.5 py-1 font-semibold rounded-lg ">
+        <Link href={"https://accounts.zapfolio.in/sign-up"} className="bg-white text-black border px-2.5 py-1 font-semibold rounded-lg ">
           Sign Up
         </Link>
       </SignedOut>
