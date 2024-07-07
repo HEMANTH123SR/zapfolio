@@ -19,8 +19,6 @@ const Themes = () => {
             queryValue = "portfolio"
     }
 
-   
-
 
     return (
         <main className="flex w-full items-center justify-center">

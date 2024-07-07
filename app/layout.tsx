@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Toaster } from "@/components/ui/toaster"
 import {
   ClerkProvider,
   SignInButton,
@@ -25,7 +26,10 @@ export default function RootLayout({
       <html lang="en">
         <body className={`${euclid.className} flex flex-col justify-center items-center`}>
           <HeaderNav />
+
           {children}
+          <Toaster />
+
           <Fotter />
         </body>
       </html>

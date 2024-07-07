@@ -197,6 +197,10 @@ const CertificationSchema = new Schema({
       default: null,
     },
   },
+  authority: {
+    type: String,
+    default: null,
+  },
 });
 
 // Schema for projects
@@ -208,34 +212,6 @@ const ProjectSchema = new Schema({
   description: {
     type: String,
     default: null,
-  },
-  start: {
-    year: {
-      type: Number,
-      default: null,
-    },
-    month: {
-      type: Number,
-      default: null,
-    },
-    day: {
-      type: Number,
-      default: null,
-    },
-  },
-  end: {
-    year: {
-      type: Number,
-      default: null,
-    },
-    month: {
-      type: Number,
-      default: null,
-    },
-    day: {
-      type: Number,
-      default: null,
-    },
   },
 });
 
@@ -317,5 +293,3 @@ export const linkedinUserDataSchema = new Schema(
   },
   { timestamps: true },
 );
-
-

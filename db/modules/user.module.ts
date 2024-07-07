@@ -7,11 +7,11 @@ const userModule = new mongoose.Schema({
     required: true,
     unique: true,
   },
-  userFullName: {
+  userName: {
     type: String,
     required: true,
   },
-  userPicture: {
+  userEmail: {
     type: String,
     required: true,
   },
@@ -27,7 +27,7 @@ const userModule = new mongoose.Schema({
     type: linkedinUserDataSchema,
     default: null,
   },
-  themesDashboard: {
+  themesData: {
     type: themesSchema,
     default: null,
   },

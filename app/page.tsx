@@ -5,7 +5,7 @@ import { TestimonialsSection } from "@/components/sections/testimonialsSection";
 import { FaqSection } from "@/components/sections/faqSections";
 export default function Home() {
   return (
-    <main className="flex h-full w-full flex-col items-center justify-center overflow-x-hidden bg-[#F6F6F8] sm:bg-white">
+    <div className="flex h-full w-full flex-col items-center justify-center overflow-x-hidden bg-[#F6F6F8] sm:bg-white">
       <HeroSection />
       <div className="my-3.5 sm:my-6 md:my-8 lg:my-10 xl:my-12"></div>
       <LinkedinToWebpolio />
@@ -16,6 +16,6 @@ export default function Home() {
       <div className="my-3.5 sm:my-6 md:my-8 lg:my-10 xl:my-12"></div>
       <FaqSection />
       <div className="my-3.5 sm:my-6 md:my-8 lg:my-10 xl:my-12"></div>
-    </main>
+    </div>
   );
 }
