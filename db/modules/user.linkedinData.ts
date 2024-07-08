@@ -218,8 +218,8 @@ const ProjectSchema = new Schema({
 // Schema for user
 export const linkedinUserDataSchema = new Schema(
   {
-    urn: { type: String, unique: true, required: true },
-    username: { type: String, unique: true, required: true },
+    urn: { type: String,  required: true },
+    username: { type: String,  required: true },
     firstName: {
       type: String,
       required: true,
