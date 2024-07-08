@@ -9,7 +9,7 @@ export async function GET(req: NextRequest) {
     const user = await User.findOne({ userId: query });
     if (user) {
       return NextResponse.json(
-        { userId: user.userId, message: "user found", success: true },
+        { data: user, message: "user found", success: true },
         { status: 200 },
       );
     } else {
