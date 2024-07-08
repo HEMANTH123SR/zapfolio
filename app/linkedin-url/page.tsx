@@ -69,12 +69,10 @@ const LinkedinUrl = () => {
             } else {
                 throw new Error(data.message || "Unknown error occurred");
             }
-        } catch (error) {
-            console.error("Error saving LinkedIn URL:", error);
+        } catch (error: any) {
             toast({
                 title: "Error",
-                description:
-                    "An error occurred while saving your LinkedIn URL. Please try again later.",
+                description: error.message,
                 variant: "destructive",
             });
         }
