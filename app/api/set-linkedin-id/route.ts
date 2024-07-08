@@ -1,6 +1,5 @@
 import { NextResponse, NextRequest } from "next/server";
 import { clerkClient } from "@clerk/nextjs/server";
-import { extractErrorCode } from "@/lib/utils";
 export async function POST(req: NextRequest) {
   const { linkedinProfileId, userId } = await req.json();
   const res = await clerkClient.users.updateUserMetadata(userId, {

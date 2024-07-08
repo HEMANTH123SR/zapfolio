@@ -7,10 +7,9 @@ export async function GET(req: NextRequest) {
     const url = new URL(req.url);
     const query = url.searchParams.get("userId");
     const user = await User.findOne({ userId: query });
-    console.log(user);
     if (user) {
       return NextResponse.json(
-        { userId: user.userId, message: "user found" },
+        { userId: user.userId, message: "user found", success: true },
         { status: 200 },
       );
     } else {
@@ -18,7 +17,10 @@ export async function GET(req: NextRequest) {
     }
   } catch (err: any) {
     return NextResponse.json(
-      { message: err?.message || err._message || "internal server error" },
+      {
+        message: err?.message || err._message || "internal server error",
+        success: false,
+      },
       { status: 500 },
     );
   }

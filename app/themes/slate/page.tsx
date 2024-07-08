@@ -1,7 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useUser } from "@clerk/clerk-react";
-
 import { MdDesktopWindows } from "react-icons/md";
 import { FaMobile, FaTablet } from "react-icons/fa";
 import { IoIosRefresh } from "react-icons/io";
@@ -9,12 +8,31 @@ import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { ComboboxDemo } from "@/components/component/combox";
+import { useEffect, useState } from "react";
 
 export default function Slate() {
   const { user, isLoaded } = useUser();
   const router = useRouter();
-  if (isLoaded) {
-    if (user?.publicMetadata.linkedinProfileId) {
+  const [userExistes, setUserExistes] = useState<boolean>(false);
+  const [userDataLoaded, setUserDataLoaded] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (isLoaded) {
+      (async () => {
+        const userResponseDataJson = await fetch(
+          `/api/find-user-exist?userId=${user?.id}`,
+        );
+        const userResponseData = await userResponseDataJson.json();
+        if (userResponseData.success) {
+          setUserExistes(true);
+        }
+        setUserDataLoaded(true);
+      })();
+    }
+  }, [isLoaded]);
+
+  if (isLoaded && userDataLoaded) {
+    if (user?.publicMetadata.linkedinProfileId && userExistes) {
       return (
         <div className="flex h-full w-full">
           <div className="flex h-screen min-w-[300px] max-w-[300px] flex-col border border-t-4 border-t-[#FF560E] bg-[#FAFAFA]">
@@ -103,6 +121,7 @@ export default function Slate() {
     }
     router.push("/linkedin-url?t=slate");
   }
+
   return (
     <div className="flex h-screen w-full">
       <svg className="mr-3 h-5 w-5 animate-spin" viewBox="0 0 24 24"></svg>
