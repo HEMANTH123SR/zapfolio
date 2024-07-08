@@ -11,3 +11,16 @@ export function isValidLinkedInUrl(url: string): boolean {
     /^(https?:\/\/)?(www\.)?linkedin\.com\/in\/[a-zA-Z0-9-_/]+\/?$/;
   return linkedInProfileUrlPattern.test(url);
 }
+
+
+export function extractErrorCode(errorMessage: string): string | null {
+  const searchStr = "E11000";
+  const startIndex = errorMessage.indexOf(searchStr);
+  
+  // Check if the error code was found
+  if (startIndex !== -1) {
+      return errorMessage.slice(startIndex, startIndex + searchStr.length);
+  }
+  
+  return null;
+}

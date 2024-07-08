@@ -218,8 +218,8 @@ const ProjectSchema = new Schema({
 // Schema for user
 export const linkedinUserDataSchema = new Schema(
   {
-    urn: { type: String,  required: true },
-    username: { type: String,  required: true },
+    urn: { type: String, required: true },
+    username: { type: String, required: true },
     firstName: {
       type: String,
       required: true,
@@ -238,11 +238,12 @@ export const linkedinUserDataSchema = new Schema(
     },
     profilePicture: {
       type: String,
-      required: true,
+      default:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS_lSNw7Ee7u6J7SWu5Ku6BP6H3kMcOI9TFw&s",
     },
     summary: {
       type: String,
-      required: true,
+      default: "",
     },
     headline: {
       type: String,

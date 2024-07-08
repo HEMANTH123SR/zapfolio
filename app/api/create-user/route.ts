@@ -1,5 +1,3 @@
-
-
 import { NextRequest, NextResponse } from "next/server";
 import { connectDB } from "@/db/index";
 import { User } from "@/db/modules/user.module";
