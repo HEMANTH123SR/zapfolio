@@ -17,18 +17,15 @@ const userModule = new mongoose.Schema({
   },
   likedinUrl: {
     type: String,
-    default: null,
-  },
-  linkedinBusinessUrl: {
-    type: String,
-    default: null,
+    required: true,
   },
   linkedinUserData: {
     type: linkedinUserDataSchema,
-    default: null,
+    required: true,
   },
   themesData: {
     type: themesSchema,
+    required: true,
   },
 });
 
