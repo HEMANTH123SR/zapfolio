@@ -51,28 +51,33 @@ const componentsToShowSchema = new mongoose.Schema({
 
 export const themesSchema = new mongoose.Schema({
   slate: {
-    componetsToShow: {
+    componentsToShow: {
       type: componentsToShowSchema,
+      default: () => ({}) 
     },
   },
   vivid: {
-    componetsToShow: {
+    componentsToShow: {
       type: componentsToShowSchema,
+      default: () => ({})
     },
   },
   bentodark: {
-    componetsToShow: {
+    componentsToShow: {
       type: componentsToShowSchema,
+      default: () => ({})
     },
   },
   twitter: {
-    componetsToShow: {
+    componentsToShow: {
       type: componentsToShowSchema,
+      default: () => ({})
     },
   },
   windows95: {
-    componetsToShow: {
+    componentsToShow: {
       type: componentsToShowSchema,
+      default: () => ({})
     },
   },
 });

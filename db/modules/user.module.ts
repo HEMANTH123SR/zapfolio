@@ -25,7 +25,7 @@ const userModule = new mongoose.Schema({
   },
   themesData: {
     type: themesSchema,
-    required: true,
+    default: () => ({})  
   },
 });
 
