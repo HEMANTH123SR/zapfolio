@@ -39,8 +39,10 @@ export default function Slate() {
             <ScrollArea className="h-full w-full">
               <div className="flex flex-col items-center">
                 <div className="flex w-full items-center justify-between border-b px-5 py-4 pr-8">
-                  <IoIosRefresh className="h-7 w-7 cursor-pointer" />
-
+                  <div className="flex items-center justify-center flex-col cursor-pointer">
+                    <IoIosRefresh className="h-7 w-7 " />
+                    <span style={{ fontSize: "10px" }}>reset</span>
+                  </div>
                   <div className="cursor-pointer rounded-full border bg-white p-2.5">
                     <MdDesktopWindows className="h-4 w-4" />
                   </div>
@@ -54,7 +56,6 @@ export default function Slate() {
 
                 <div className="flex w-full flex-col space-y-3 border-b px-5 py-4 text-[#666666]">
                   <h3 className="text-xs font-semibold">FONTS</h3>
-
                   <ComboboxDemo title="Selece Primary Font" />
                   <ComboboxDemo title="Selece Base Font" />
                 </div>
@@ -100,6 +101,14 @@ export default function Slate() {
                     <Switch id="bio" />
                     <Label htmlFor="bio">Bio</Label>
                   </div>
+                  <div className="flex items-center space-x-2 text-xs">
+                    <Switch id="bio" />
+                    <Label htmlFor="bio">Sociale</Label>
+                  </div>
+                  <div className="flex items-center space-x-2 text-xs">
+                    <Switch id="bio" />
+                    <Label htmlFor="bio">Courses</Label>
+                  </div>
                 </div>
               </div>
             </ScrollArea>
@@ -113,7 +122,7 @@ export default function Slate() {
             </div>
           </div>
           <iframe
-            src="https://slate.zapfolio.in/hello"
+            src={`https://slate.zapfolio.in/${user.id}`}
             className="h-screen w-full border-r border-t-4 border-[#FF560E]"
           />
         </div>

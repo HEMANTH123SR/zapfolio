@@ -29,10 +29,7 @@ const userModule = new mongoose.Schema({
   },
   themesData: {
     type: themesSchema,
-    default: null,
   },
 });
 
 export const User = mongoose.models.User || mongoose.model("User", userModule);
-
-
