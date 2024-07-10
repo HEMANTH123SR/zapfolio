@@ -25,7 +25,13 @@ const userModule = new mongoose.Schema({
   },
   themesData: {
     type: themesSchema,
-    default: () => ({})  
+    default: () => ({
+      slate: { componentsToShow: {} },
+      vivid: { componentsToShow: {} },
+      bentodark: { componentsToShow: {} },
+      twitter: { componentsToShow: {} },
+      windows95: { componentsToShow: {} },
+    }),
   },
 });
 
