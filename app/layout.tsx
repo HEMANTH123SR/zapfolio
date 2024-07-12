@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
 import { Toaster } from "@/components/ui/toaster"
 import {
   ClerkProvider,
@@ -28,8 +30,9 @@ export default function RootLayout({
           <HeaderNav />
 
           {children}
+          <SpeedInsights />
+          <Analytics />
           <Toaster />
-
           <Fotter />
         </body>
       </html>
