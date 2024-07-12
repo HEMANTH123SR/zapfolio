@@ -12,15 +12,17 @@ export function isValidLinkedInUrl(url: string): boolean {
   return linkedInProfileUrlPattern.test(url);
 }
 
-
 export function extractErrorCode(errorMessage: string): string | null {
   const searchStr = "E11000";
   const startIndex = errorMessage.indexOf(searchStr);
-  
+
   // Check if the error code was found
   if (startIndex !== -1) {
-      return errorMessage.slice(startIndex, startIndex + searchStr.length);
+    return errorMessage.slice(startIndex, startIndex + searchStr.length);
   }
-  
+
   return null;
 }
+
+export const encodeData = (data: object): string =>
+  encodeURIComponent(JSON.stringify(data));

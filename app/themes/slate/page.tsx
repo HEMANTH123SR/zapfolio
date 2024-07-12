@@ -7,8 +7,8 @@ import { IoIosRefresh } from "react-icons/io";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { ComboboxDemo } from "@/components/component/combox";
 import { useEffect, useState } from "react";
+import { encodeData } from "@/lib/utils";
 
 export default function Slate() {
   const { user, isLoaded } = useUser();
@@ -25,6 +25,7 @@ export default function Slate() {
         const userResponseData = await userResponseDataJson.json();
         if (userResponseData.success) {
           setUserExistes(true);
+
         }
         setUserDataLoaded(true);
       })();
@@ -55,8 +56,9 @@ export default function Slate() {
                 </div>
 
                 <div className="flex w-full flex-col space-y-3 border-b px-5 py-4 text-[#666666]">
-                  <span className="text-xs ">
-                     To change details like About, Education, Position, and more, go to the dashboard.
+                  <span className="text-xs">
+                    To change details like About, Education, Position, and more,
+                    go to the dashboard.
                   </span>
                 </div>
                 <div className="flex w-full flex-col space-y-3 border-b px-5 py-4 text-[#666666]">
