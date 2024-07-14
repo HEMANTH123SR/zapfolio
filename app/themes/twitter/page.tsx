@@ -123,7 +123,7 @@ export default function Twitter() {
     if (user?.publicMetadata.linkedinProfileId && userExistes) {
       return (
         <div className="flex h-full w-full">
-          <div className="flex h-screen min-w-[300px] max-w-[300px] flex-col border border-t-4 border-t-[#FF560E] bg-[#FAFAFA]">
+          <div className="flex h-screen w-full md:min-w-[300px] md:max-w-[300px] flex-col border border-t-4 border-t-[#FF560E] bg-[#FAFAFA]">
             <ScrollArea className="h-full w-full">
               <div className="flex flex-col items-center">
                 <div className="flex w-full items-center justify-between border-b px-5 py-4 pr-8">
@@ -268,7 +268,7 @@ export default function Twitter() {
           <iframe
             key={reloadIframe}
             src={`https://twitter.zapfolio.in/${user.id}`}
-            className={`${selectedDevice === "desktop" ? "" : "border"} h-screen`}
+            className={`${selectedDevice === "desktop" ? "" : "border"} hidden md:block  h-screen`}
             style={{
               width: deviceDimensions[selectedDevice].width,
               margin: "auto",
