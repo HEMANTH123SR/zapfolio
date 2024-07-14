@@ -11,7 +11,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { useEffect, useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 
-export default function BentoDark() {
+export default function Windows95() {
     const { user, isLoaded } = useUser();
     const { toast } = useToast();
     const router = useRouter();
@@ -85,7 +85,7 @@ export default function BentoDark() {
                 },
                 body: JSON.stringify({
                     userId: user?.id,
-                    themeName: "bentodark",
+                    themeName: "windows95",
                     componentsToShow: switchStates,
                 }),
             });
@@ -119,9 +119,6 @@ export default function BentoDark() {
     };
 
     if (isLoaded && userDataLoaded) {
-        console.log("ninja")
-        console.log("linkedin id", user?.publicMetadata.linkedinProfileId)
-        console.log("user exists ", userExistes)
         if (user?.publicMetadata.linkedinProfileId && userExistes) {
             return (
                 <div className="flex h-full w-full">
@@ -262,7 +259,7 @@ export default function BentoDark() {
 
                     <iframe
                         key={reloadIframe}
-                        src={`https://bentodark.zapfolio.in/${user.id}`}
+                        src={`https://windows.zapfolio.in/${user.id}`}
                         className={`${selectedDevice === "desktop" ? "" : "border"} h-screen`}
                         style={{
                             width: deviceDimensions[selectedDevice].width,
@@ -272,7 +269,7 @@ export default function BentoDark() {
                 </div>
             );
         }
-        router.push("/linkedin-url?t=bentodark");
+        router.push("/linkedin-url?t=windows");
     }
 
     return (
