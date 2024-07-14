@@ -252,17 +252,19 @@ export default function BentoDark() {
               </div>
             </ScrollArea>
             <div className="flex w-full flex-col items-center justify-center space-y-3 border-t py-6 font-semibold">
-              <button className="w-10/12 rounded-full bg-[#FF560E] py-1.5 text-white">
-                Published Link
-              </button>
               <Link
                 href={`https://bentodark.zapfolio.in/${user.id}`}
                 target="_blank"
+                className="w-10/12 flex justify-center items-center rounded-full bg-[#FF560E] py-1.5 text-white">
+                Published Link
+              </Link>
+              <button
+
                 className="w-10/12 rounded-full border bg-[#EEEEEE] py-1.5 text-[#666666]"
                 onClick={handleSaveChanges}
               >
                 {isSaving ? "Saving..." : "Save Changes"}
-              </Link>
+              </button>
             </div>
           </div>
 

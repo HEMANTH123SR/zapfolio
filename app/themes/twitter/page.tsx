@@ -252,7 +252,7 @@ export default function Twitter() {
               <Link
                 href={`https://twitter.zapfolio.in/${user.id}`}
                 target="_blank"
-                className="w-10/12 rounded-full bg-[#FF560E] py-1.5 text-white"
+                className="w-10/12 flex justify-center items-center rounded-full bg-[#FF560E] py-1.5 text-white"
               >
                 Published Link
               </Link>
