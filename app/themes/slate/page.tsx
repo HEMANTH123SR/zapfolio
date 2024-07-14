@@ -4,7 +4,7 @@ import { useUser } from "@clerk/clerk-react";
 import { ThemeType } from "@/lib/types/themes.types";
 import { MdDesktopWindows } from "react-icons/md";
 import { FaMobile, FaTablet } from "react-icons/fa";
-import { IoIosRefresh } from "react-icons/io";
+import { HiMiniHome } from "react-icons/hi2";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -127,9 +127,12 @@ export default function Slate() {
             <ScrollArea className="h-full w-full">
               <div className="flex flex-col items-center">
                 <div className="flex w-full items-center justify-between border-b px-5 py-4 pr-8">
-                  <div className="flex cursor-pointer flex-col items-center justify-center">
-                    <IoIosRefresh className="h-7 w-7" />
-                  </div>
+                  <Link
+                    href={"/"}
+                    className="flex cursor-pointer flex-col items-center justify-center"
+                  >
+                    <HiMiniHome className="h-7 w-7" />
+                  </Link>
                   <div
                     className="cursor-pointer rounded-full border bg-white p-2.5"
                     onClick={() => setSelectedDevice("desktop")}
@@ -249,7 +252,8 @@ export default function Slate() {
               <Link
                 href={`https://slate.zapfolio.in/${user.id}`}
                 target="_blank"
-                className="w-10/12 rounded-full bg-[#FF560E] py-1.5 text-white">
+                className="rounded-ful flex w-10/12 items-center justify-center rounded-full bg-[#FF560E] py-1.5 text-white"
+              >
                 Published Link
               </Link>
               <button
