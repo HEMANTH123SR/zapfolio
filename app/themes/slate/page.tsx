@@ -10,6 +10,7 @@ import { Switch } from "@/components/ui/switch";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useEffect, useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
+import Link from "next/link";
 
 export default function Slate() {
   const { user, isLoaded } = useUser();
@@ -245,9 +246,12 @@ export default function Slate() {
               </div>
             </ScrollArea>
             <div className="flex w-full flex-col items-center justify-center space-y-3 border-t py-6 font-semibold">
-              <button className="w-10/12 rounded-full bg-[#FF560E] py-1.5 text-white">
+              <Link
+                href={`https://slate.zapfolio.in/${user.id}`}
+                target="_blank"
+                className="w-10/12 rounded-full bg-[#FF560E] py-1.5 text-white">
                 Published Link
-              </button>
+              </Link>
               <button
                 className="w-10/12 rounded-full border bg-[#EEEEEE] py-1.5 text-[#666666]"
                 onClick={handleSaveChanges}

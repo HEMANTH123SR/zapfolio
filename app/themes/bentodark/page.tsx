@@ -10,6 +10,7 @@ import { Switch } from "@/components/ui/switch";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useEffect, useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
+import Link from "next/link";
 
 export default function BentoDark() {
     const { user, isLoaded } = useUser();
@@ -251,12 +252,14 @@ export default function BentoDark() {
                             <button className="w-10/12 rounded-full bg-[#FF560E] py-1.5 text-white">
                                 Published Link
                             </button>
-                            <button
+                            <Link
+                                href={`https://bentodark.zapfolio.in/${user.id}`}
+                                target="_blank"
                                 className="w-10/12 rounded-full border bg-[#EEEEEE] py-1.5 text-[#666666]"
                                 onClick={handleSaveChanges}
                             >
                                 {isSaving ? "Saving..." : "Save Changes"}
-                            </button>
+                            </Link>
                         </div>
                     </div>
 
