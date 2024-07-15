@@ -271,7 +271,7 @@ export default function BentoDark() {
           <iframe
             key={reloadIframe}
             src={`https://bentodark.zapfolio.in/${user.id}`}
-            className={`${selectedDevice === "desktop" ? "" : "border"} hidden md:block `}
+            className={`${selectedDevice === "desktop" ? "" : "border"} hidden md:block h-screen`}
             style={{
               width: deviceDimensions[selectedDevice].width,
               margin: "auto",

@@ -54,6 +54,7 @@ export default function Vivid() {
       (async () => {
         const userResponseDataJson = await fetch(
           `/api/get-user-data?userId=${user?.id}`,
+          { cache: "no-cache" }
         );
         const userResponseData = await userResponseDataJson.json();
         if (userResponseData.success) {
