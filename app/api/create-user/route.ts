@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { connectDB } from "@/db/index";
 import { User } from "@/db/modules/user.module";
 import { clerkClient } from "@clerk/nextjs/server";
+import { cache } from "react";
 
 // Fetch LinkedIn data by URL
 async function fetchLinkedInData(profileId: string) {
@@ -13,7 +14,7 @@ async function fetchLinkedInData(profileId: string) {
         ? process.env.X_RAPIDAPI_KEY
         : "",
       "x-rapidapi-host": "linkedin-api8.p.rapidapi.com",
-    },
+    }
   };
 
   const response = await fetch(url, options);
