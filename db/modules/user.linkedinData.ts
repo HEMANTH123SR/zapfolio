@@ -89,7 +89,7 @@ const PositionSchema = new Schema({
   },
   companyURL: {
     type: String,
-    required: true,
+    default: null,
   },
   companyLogo: {
     type: String,
@@ -186,11 +186,11 @@ const CertificationSchema = new Schema({
   company: {
     name: {
       type: String,
-      required: true,
+      default: "no company name",
     },
     universalName: {
       type: String,
-      required: true,
+      default: "no universal name",
     },
     logo: {
       type: String,
