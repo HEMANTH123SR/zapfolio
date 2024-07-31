@@ -146,7 +146,7 @@ export const HeaderNav = () => {
       <SheetContent side={"left"} className="w-full max-w-96 md:hidden">
         <SheetHeader className="mr-6">
           <SheetTitle className="flex justify-center bg-[#FF560E] py-3">
-            <img src="/zapfolio-logo/1.png" className="w-4/6" />
+            {/* <img src="/zapfolio-logo/1.png" className="w-4/6" /> */}
           </SheetTitle>
           <SheetDescription>
             Create Your Portfolio Website in a Zap!
