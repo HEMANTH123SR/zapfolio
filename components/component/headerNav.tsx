@@ -145,7 +145,7 @@ export const HeaderNav = () => {
       </header>
       <SheetContent side={"left"} className="w-full max-w-96 md:hidden">
         <SheetHeader className="mr-6">
-          <SheetTitle className="flex justify-center bg-[#FF560E] py-3">
+          <SheetTitle className="flex justify-center bg-[#FF560E] py-1 rounded-md">
             {/* <img src="/zapfolio-logo/1.png" className="w-4/6" /> */}
           </SheetTitle>
           <SheetDescription>
