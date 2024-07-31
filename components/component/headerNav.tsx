@@ -45,9 +45,12 @@ export const HeaderNav = () => {
         setIsScrolled(false);
       }
     };
+
     window.addEventListener("scroll", handleScroll);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
+
     };
   }, []);
 
@@ -150,7 +153,7 @@ export const HeaderNav = () => {
           </SheetDescription>
         </SheetHeader>
         <ScrollArea>
-          <div className="mt-4 flex flex-col space-y-6 sm:space-y-5">
+          <div className={`mt-4 flex flex-col space-y-6 sm:space-y-5 h-[66vh]`}>
             <Link
               href={"/user"}
               className="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100"
@@ -229,7 +232,7 @@ export const HeaderNav = () => {
         </ScrollArea>
 
         <SheetFooter>
-          <div className="mt-auto flex w-full justify-around border-t border-gray-200 p-4">
+          <div className="mt-auto  flex w-full h-full justify-around items-center border-t border-gray-200 px-4 pt-7">
             <a
               className="flex items-center text-gray-700 hover:text-gray-500"
               href="#"
