@@ -7,6 +7,7 @@ export async function POST(req: NextRequest) {
       linkedinProfileId: linkedinProfileId,
     },
   });
+  
   if (res.publicMetadata.linkedinProfileId === linkedinProfileId) {
     const createUserResponse = await fetch(
       "https://www.zapfolio.in/api/create-user",
@@ -23,7 +24,7 @@ export async function POST(req: NextRequest) {
     );
 
     const createUserData = await createUserResponse.json();
-    console.log(createUserData);
+    console.log(createUserData, "create user data");
     if (!createUserData.success) {
       let message = createUserData.message;
       if (
