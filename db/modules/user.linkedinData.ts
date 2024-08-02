@@ -69,7 +69,7 @@ const EducationSchema = new Schema({
   },
   url: {
     type: String,
-    required: true,
+    default: null,
   },
   schoolId: {
     type: String,

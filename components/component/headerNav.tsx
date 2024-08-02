@@ -78,7 +78,7 @@ export const HeaderNav = () => {
           <div className="hidden xl:block">
             <div className="flex">
               <Link
-                href={"/"}
+                href={"/themes"}
                 className="rounded-md px-4 py-2.5 text-sm font-semibold text-[#868686] hover:bg-slate-50"
               >
                 Themes
@@ -102,7 +102,7 @@ export const HeaderNav = () => {
         <div className="hidden md:block xl:hidden">
           <div className="flex">
             <Link
-              href={"/"}
+              href={"/themes"}
               className="rounded-md px-4 py-2.5 text-sm font-semibold text-[#868686] hover:bg-slate-50"
             >
               Themes
