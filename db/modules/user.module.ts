@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import { UserDetailedDataSchema } from "@/db/modules/user.linkedinData";
+import { SelectedSchema } from "@/db/modules/user.selectedTheme";
 const userModule = new mongoose.Schema({
   userAuthDetails: {
     userId: {
@@ -25,42 +26,8 @@ const userModule = new mongoose.Schema({
     required: true,
   },
   selectedTheme: {
-    themeName: {
-      type: String,
-      required: true,
-    },
-    layoutSelected: {
-      type: String,
-      default: null,
-    },
-    fonts: {
-      type: [
-        {
-          fontType: { type: String, required: true },
-          fontName: { type: String, required: true },
-        },
-      ],
-      default: null,
-    },
-    colours: {
-      type: [
-        {
-          colorType: { type: String, required: true },
-          colorHexCode: { type: String, required: true },
-        },
-      ],
-      default: null,
-    },
-    media: {
-      type: [
-        {
-          mediaType: { required: true, type: String },
-          mediaRequiredFor: { type: String, required: true },
-          mediaUrl: { required: true, type: String },
-        },
-      ],
-      default: null,
-    },
+    type: SelectedSchema,
+    default: null,
   },
 });
 
