@@ -28,6 +28,10 @@ async function fetchLinkedInData(profileId: string) {
 
 // Create a new user in the database
 async function createUser(userData: any, linkedInData: any) {
+  console.log("user id ", userData.id);
+  if (!userData.id) {
+    throw new Error("User ID is missing or invalid");
+  }
   const newUser = new User({
     userAuthDetails: {
       userId: userData.id,
