@@ -419,7 +419,7 @@ export const UserDetailedDataSchema = new Schema(
     },
     jobTitle: {
       type: String,
-      required: true,
+      default: null,
     },
     isOpenToWork: {
       type: Boolean,
