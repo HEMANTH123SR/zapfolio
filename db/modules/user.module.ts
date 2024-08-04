@@ -1,37 +1,66 @@
 import mongoose from "mongoose";
-import { linkedinUserDataSchema } from "@/db/modules/user.linkedinData";
-import { themesSchema } from "@/db/modules/user.themes";
+import { UserDetailedDataSchema } from "@/db/modules/user.linkedinData";
 const userModule = new mongoose.Schema({
-  userId: {
+  userAuthDetails: {
+    userId: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    userName: {
+      type: String,
+      required: true,
+    },
+    userEmail: {
+      type: String,
+      required: true,
+    },
+  },
+  linkedinUrl: {
     type: String,
     required: true,
-    unique: true,
   },
-  userName: {
-    type: String,
+  userDetailedData: {
+    type: UserDetailedDataSchema,
     required: true,
   },
-  userEmail: {
-    type: String,
-    required: true,
-  },
-  likedinUrl: {
-    type: String,
-    required: true,
-  },
-  linkedinUserData: {
-    type: linkedinUserDataSchema,
-    required: true,
-  },
-  themesData: {
-    type: themesSchema,
-    default: () => ({
-      slate: { componentsToShow: {} },
-      vivid: { componentsToShow: {} },
-      bentodark: { componentsToShow: {} },
-      twitter: { componentsToShow: {} },
-      windows95: { componentsToShow: {} },
-    }),
+  selectedTheme: {
+    themeName: {
+      type: String,
+      required: true,
+    },
+    layoutSelected: {
+      type: String,
+      default: null,
+    },
+    fonts: {
+      type: [
+        {
+          fontType: { type: String, required: true },
+          fontName: { type: String, required: true },
+        },
+      ],
+      default: null,
+    },
+    colours: {
+      type: [
+        {
+          colorType: { type: String, required: true },
+          colorHexCode: { type: String, required: true },
+        },
+      ],
+      default: null,
+    },
+    media: {
+      type: [
+        {
+          mediaType: { required: true, type: String },
+          mediaRequiredFor: { type: String, required: true },
+          mediaUrl: { required: true, type: String },
+        },
+      ],
+      default: null,
+    },
   },
 });
 
