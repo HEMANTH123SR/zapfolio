@@ -1,8 +1,12 @@
 import mongoose from "mongoose";
-import { UserDetailedDataSchema } from "@/db/modules/user.linkedinData";
+import { UserDetailedDataSchema } from "@/db/modules/user.detailedData";
 import { SelectedSchema } from "@/db/modules/user.selectedTheme";
 const userModule = new mongoose.Schema({
   userAuthDetails: {
+    userAuthId: {
+      type: String,
+      required: true,
+    },
     userName: {
       type: String,
       required: true,

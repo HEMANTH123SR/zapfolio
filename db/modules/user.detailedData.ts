@@ -445,11 +445,11 @@ export const UserDetailedDataSchema = new Schema(
     },
     about: {
       type: String,
-      default: "",
+      default: null,
     },
     headline: {
       type: String,
-      required: true,
+      default: null,
     },
     availability: {
       type: String,
@@ -529,7 +529,7 @@ export const UserDetailedDataSchema = new Schema(
       type: [CustomSectionSchema],
       default: [],
     },
-    socialLinks: {
+    socialeLinks: {
       type: [SocialLinksSchema],
       default: [],
     },
