@@ -400,7 +400,7 @@ const CustomSectionSchema = new Schema({
 export const UserDetailedDataSchema = new Schema(
   {
     urn: { type: String, required: true },
-    username: { type: String, required: true },
+    linkedinUserName: { type: String, required: true },
     firstName: {
       type: String,
       required: true,

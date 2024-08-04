@@ -28,42 +28,37 @@ async function fetchLinkedInData(profileId: string) {
 
 // Create a new user in the database
 async function createUser(userData: any, linkedInData: any) {
-  // const newUser = new User({
-  //   userId: userData.id,
-  //   userName: userData.username,
-  //   userEmail: userData.emailAddresses[0].emailAddress,
-  //   likedinUrl: userData.publicMetadata.linkedinProfileId,
-  //   linkedinUserData: {
-  //     urn: linkedInData.urn,
-  //     username: linkedInData.username,
-  //     firstName: linkedInData.firstName,
-  //     lastName: linkedInData.lastName,
-  //     isOpenToWork: linkedInData.isOpenToWork,
-  //     isHiring: linkedInData.isHiring,
-  //     profilePicture: linkedInData.profilePicture,
-  //     summary: linkedInData.summary,
-  //     headline: linkedInData.headline,
-  //     geo: linkedInData.geo,
-  //     languages: linkedInData.languages,
-  //     educations: linkedInData.educations,
-  //     position: linkedInData.position,
-  //     skills: (linkedInData.skills || []).map(
-  //       (data: { name: string; passedSkillAssessment: boolean }) => data.name,
-  //     ),
-  //     courses: (linkedInData.courses || []).map(
-  //       (data: { name: string; number: string }) => data,
-  //     ),
-  //     certifications: linkedInData.certifications,
-  //     projects: (linkedInData.projects.items || []).map(
-  //       (data: { title: string; description: string }) => data,
-  //     ),
-  //   },
-  // });
-  // await newUser.save();
+  const newUser = new User({
+    userAuthDetails: {
+      userId: userData.id,
+      userName: userData.username,
+      userEmail: userData.emailAddresses[0].emailAddress,
+    },
+    linkedinUrl: userData.publicMetadata.linkedinProfileId,
+    userDetailedData: {
+      urn: linkedInData.urn,
+      linkedinUserName: linkedInData.username,
+      firstName: linkedInData.firstName,
+      lastName: linkedInData.lastName,
+      isOpenToWork: linkedInData.isOpenToWork,
+      isHiring: linkedInData.isHiring,
+      profilePicture: linkedInData.profilePicture,
+      about: linkedInData.summary,
+      headline: linkedInData.headline,
+      geo: linkedInData.geo,
+      languages: linkedInData.languages,
+      educations: linkedInData.educations,
 
-  const newUser=new User({
-    
-  })
+      skills: (linkedInData.skills || []).map(
+        (data: { name: string; passedSkillAssessment: boolean }) => data.name,
+      ),
+      courses: (linkedInData.courses || []).map(
+        (data: { name: string; number: string }) => data,
+      ),
+      certifications: linkedInData.certifications,
+    },
+  });
+  await newUser.save();
 }
 
 // Main POST handler function
