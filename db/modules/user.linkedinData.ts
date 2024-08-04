@@ -413,6 +413,10 @@ export const UserDetailedDataSchema = new Schema(
       type: [WebsitesSchema],
       default: [],
     },
+    cv: {
+      type: String,
+      default: null,
+    },
     phoneNumber: {
       type: Number,
       default: null,
