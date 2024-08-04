@@ -34,7 +34,6 @@ async function createUser(userData: any, linkedInData: any) {
   }
   const newUser = new User({
     userAuthDetails: {
-      userId: userData.id,
       userName: userData.username,
       userEmail: userData.emailAddresses[0].emailAddress,
     },
