@@ -275,7 +275,7 @@ const HackathonSchema = new Schema({
   },
 });
 // Schema for Sociale Links
-const SocialLinksSchema = new Schema({
+const SocialeLinksSchema = new Schema({
   platform: {
     type: String,
     required: true,
@@ -530,7 +530,7 @@ export const UserDetailedDataSchema = new Schema(
       default: [],
     },
     socialeLinks: {
-      type: [SocialLinksSchema],
+      type: [SocialeLinksSchema],
       default: [],
     },
     pictures: {
