@@ -3,10 +3,6 @@ import { UserDetailedDataSchema } from "@/db/modules/user.linkedinData";
 import { SelectedSchema } from "@/db/modules/user.selectedTheme";
 const userModule = new mongoose.Schema({
   userAuthDetails: {
-    userId: {
-      type: String,
-      required: true,
-    },
     userName: {
       type: String,
       required: true,
