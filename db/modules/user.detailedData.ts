@@ -545,6 +545,23 @@ export const UserDetailedDataSchema = new Schema(
       type: [ArticleSchema],
       default: [],
     },
+    note: {
+      type: String,
+      default: null,
+    },
+    guestBook: {
+      type: {
+        name: {
+          type: String,
+          required: true,
+        },
+        guestNote: {
+          type: String,
+          required: true,
+        },
+      },
+      default: null,
+    },
   },
   { timestamps: true },
 );
