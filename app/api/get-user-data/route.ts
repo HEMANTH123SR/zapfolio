@@ -6,7 +6,7 @@ export async function GET(req: NextRequest) {
     await connectDB();
     const url = new URL(req.url);
     const query = url.searchParams.get("userId");
-    const user = await User.findOne({ userId: query });
+    const user = await User.findOne({ "userAuthDetails.userAuthId": query });
     if (user) {
       return NextResponse.json(
         { data: user, message: "user found", success: true },
