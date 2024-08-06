@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import { UserDetailedDataSchema } from "@/db/modules/user.detailedData";
 import { SelectedSchema } from "@/db/modules/user.selectedTheme";
+import { AnalyticsSchema } from "@/db/modules/user.analytics";
 const userModule = new mongoose.Schema({
   userAuthDetails: {
     userAuthId: {
@@ -26,6 +27,10 @@ const userModule = new mongoose.Schema({
   },
   selectedTheme: {
     type: SelectedSchema,
+    default: null,
+  },
+  analytics: {
+    type: [AnalyticsSchema],
     default: null,
   },
 });
