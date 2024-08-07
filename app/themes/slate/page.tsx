@@ -1,6 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useUser } from "@clerk/clerk-react";
+import { Sidebar } from "@/components/component/sideBar";
 import { ThemeType } from "@/lib/types/themes.types";
 import { MdDesktopWindows } from "react-icons/md";
 import { FaMobile, FaTablet } from "react-icons/fa";
@@ -52,7 +53,8 @@ export default function Slate() {
     if (user?.publicMetadata.linkedinProfileId && userExistes) {
       console.log(`url \n https://slate.zapfolio.in/${user.id} `);
       return (
-        <div className="flex max-h-screen w-full">
+        <div className="flex max-h-screen h-screen w-full">
+          <Sidebar />
           <iframe
             key={reloadIframe}
             src={`https://slate.zapfolio.in/${user.id}`}

@@ -102,7 +102,7 @@ const Themes = () => {
                 },
               ].map((theme) => (
                 <Link
-                  href={`theme/${theme.themeName}`}
+                  href={`themes/${theme.themeName}`}
                   key={theme.themeName}
                   className="flex w-full flex-col items-center justify-center space-y-2 p-3"
                 >
