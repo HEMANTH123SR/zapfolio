@@ -35,7 +35,7 @@ export const HeaderNav = () => {
   const pathName = usePathname();
   const splitedPathName = pathName.split("/");
   const applyThemeEffect =
-    splitedPathName[1] === "theme" && splitedPathName.length === 3;
+    splitedPathName[1] === "themes" && splitedPathName.length === 3;
   const [isScrolled, setIsScrolled] = useState(false);
   useEffect(() => {
     const handleScroll = () => {

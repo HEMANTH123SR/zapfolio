@@ -6,7 +6,7 @@ export const Fotter = () => {
   const pathName = usePathname();
   const splitedPathName = pathName.split("/");
   const applyThemeEffect =
-    splitedPathName[1] === "theme" && splitedPathName.length === 3;
+    splitedPathName[1] === "themes" && splitedPathName.length === 3;
   if (applyThemeEffect) {
     return <></>;
   }
@@ -53,13 +53,22 @@ export const Fotter = () => {
         </div>
         <div className="hidden flex-col space-y-6 xl:flex">
           <span className="font-semibold text-[#FF560E]">{`{ }  social `}</span>
-          <Link href={"https://www.linkedin.com/company/zapfolio"} className="md:test-base cursor-pointer text-sm hover:underline">
+          <Link
+            href={"https://www.linkedin.com/company/zapfolio"}
+            className="md:test-base cursor-pointer text-sm hover:underline"
+          >
             Linkedin
           </Link>
-          <Link href={"https://x.com/zapfolio_in"} className="md:test-base cursor-pointer text-sm hover:underline">
+          <Link
+            href={"https://x.com/zapfolio_in"}
+            className="md:test-base cursor-pointer text-sm hover:underline"
+          >
             Twitter
           </Link>
-          <Link href={"https://www.youtube.com/"} className="md:test-base cursor-pointer text-sm hover:underline">
+          <Link
+            href={"https://www.youtube.com/"}
+            className="md:test-base cursor-pointer text-sm hover:underline"
+          >
             Youtube
           </Link>
         </div>
@@ -67,7 +76,14 @@ export const Fotter = () => {
       <div className="my-7"></div>
       <div className="flex w-full items-center justify-center bg-[#FF560E] px-16 py-5 text-white sm:justify-between sm:rounded-b-xl">
         <span className="capitalize">© zapfolio 2024</span>
-        <Link href={"https://mail.google.com/mail/?view=cm&fs=1&to=support@zapfolio.in"} target="_blank" className="hidden sm:block">support@zapfolio.in
+        <Link
+          href={
+            "https://mail.google.com/mail/?view=cm&fs=1&to=support@zapfolio.in"
+          }
+          target="_blank"
+          className="hidden sm:block"
+        >
+          support@zapfolio.in
         </Link>
       </div>
     </footer>
