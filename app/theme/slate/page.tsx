@@ -40,6 +40,7 @@ export default function Slate() {
         );
         const userResponseData = await userResponseDataJson.json();
         if (userResponseData.success) {
+          console.log("user data exists");
           setUserExistes(true);
         }
         setUserDataLoaded(true);
@@ -49,6 +50,7 @@ export default function Slate() {
 
   if (isLoaded && userDataLoaded) {
     if (user?.publicMetadata.linkedinProfileId && userExistes) {
+      console.log(`url \n https://slate.zapfolio.in/${user.id} `);
       return (
         <div className="flex h-full w-full">
           <iframe
