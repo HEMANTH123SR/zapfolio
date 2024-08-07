@@ -7,10 +7,10 @@ export async function POST(req: NextRequest) {
       linkedinProfileId: linkedinProfileId,
     },
   });
-  
+
   if (res.publicMetadata.linkedinProfileId === linkedinProfileId) {
     const createUserResponse = await fetch(
-      "https://www.zapfolio.in/api/create-user",
+      `${process.env.NEXT_PUBLIC_INSTANCE}/api/create-user`,
       {
         method: "POST",
         headers: {
