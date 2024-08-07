@@ -52,7 +52,7 @@ export default function Slate() {
     if (user?.publicMetadata.linkedinProfileId && userExistes) {
       console.log(`url \n https://slate.zapfolio.in/${user.id} `);
       return (
-        <div className="flex h-full w-full">
+        <div className="flex max-h-screen w-full">
           <iframe
             key={reloadIframe}
             src={`https://slate.zapfolio.in/${user.id}`}
