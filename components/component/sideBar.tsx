@@ -24,7 +24,9 @@ export const Sidebar = () => {
     <div
       className={`overflow-hidden border-r bg-white shadow-lg transition-all duration-300 ${isCollapsed ? "w-16" : "w-96"}`}
     >
-      <div className="flex items-center justify-between border-b bg-[#F5F6F8] p-4">
+      <div
+        className={`flex w-full items-center justify-between border-b bg-[#F5F6F8] ${isCollapsed ? "py-4" : "p-4"}`}
+      >
         {!isCollapsed && (
           <Link
             className="flex items-center justify-center space-x-2"
@@ -34,17 +36,33 @@ export const Sidebar = () => {
             <h1 className="cursor-pointer font-semibold">Zapfolio </h1>
           </Link>
         )}
-        <button
-          onClick={toggleSidebar}
-          className="rounded-full p-2 hover:bg-gray-200"
-        >
-          {isCollapsed ? (
-            <MdKeyboardDoubleArrowLeft className="text-2xl text-[#4B5563]" />
-          ) : (
-            <MdKeyboardDoubleArrowRight className="text-2xl text-[#4B5563]" />
-          )}
-        </button>
+        {!isCollapsed ? (
+          <button
+            onClick={toggleSidebar}
+            className={`rounded-full ${isCollapsed ? "p-3" : "p-2"} hover:bg-gray-200`}
+          >
+            {isCollapsed ? (
+              <MdKeyboardDoubleArrowRight className="text-2xl text-[#FF560E]" />
+            ) : (
+              <MdKeyboardDoubleArrowLeft className="text-2xl text-[#FF560E]" />
+            )}
+          </button>
+        ) : (
+          <div className="flex w-full items-center justify-center">
+            <button
+              onClick={toggleSidebar}
+              className={`rounded-full ${isCollapsed ? "p-3" : "p-2"} hover:bg-gray-200`}
+            >
+              {isCollapsed ? (
+                <MdKeyboardDoubleArrowRight className="text-2xl text-[#FF560E]" />
+              ) : (
+                <MdKeyboardDoubleArrowLeft className="text-2xl text-[#FF560E]" />
+              )}
+            </button>
+          </div>
+        )}
       </div>
+      {/* ${isCollapsed ? "p-3" : "p-1.5 border"} */}
 
       <nav className="mt-4">
         {!isCollapsed && (
@@ -57,7 +75,7 @@ export const Sidebar = () => {
           className={`flex items-center space-x-5 ${isCollapsed ? "justify-center" : "px-4"} group py-2 text-gray-700 hover:border-y hover:bg-gray-50`}
         >
           <div
-            className={`rounded-xl border ${filtredPathName.length == 2 ? "bg-blue-50" : "bg-[#EFF6FF]"} p-1.5 group-hover:bg-blue-50`}
+            className={`rounded-xl ${filtredPathName.length == 2 ? "bg-blue-50" : "bg-[#EFF6FF]"} ${isCollapsed ? "p-3" : "border p-1.5"} group-hover:bg-blue-50`}
           >
             <RiDashboardFill
               className={`h-5 w-5 ${filtredPathName.length == 2 ? "text-blue-400" : "text-[#4B5563]"} group-hover:text-blue-400`}
@@ -73,7 +91,7 @@ export const Sidebar = () => {
           className={`flex items-center space-x-5 ${isCollapsed ? "justify-center" : "px-4"} group py-2 text-gray-700 hover:border-y hover:bg-gray-50`}
         >
           <div
-            className={`rounded-xl border p-1.5 ${filtredPathName[2] == "subscription" ? "bg-amber-50" : "bg-[#EFF6FF]"} group-hover:bg-amber-50`}
+            className={`rounded-xl ${isCollapsed ? "p-3" : "border p-1.5"} ${filtredPathName[2] == "subscription" ? "bg-amber-50" : "bg-[#EFF6FF]"} group-hover:bg-amber-50`}
           >
             <FaMoneyBillWave
               className={`h-5 w-5 ${filtredPathName[2] == "subscription" ? "text-amber-400" : "text-[#4B5563]"} group-hover:text-amber-400`}
@@ -88,7 +106,7 @@ export const Sidebar = () => {
           className={`flex items-center space-x-5 ${isCollapsed ? "justify-center" : "px-4"} group py-2 text-gray-700 hover:border-y hover:bg-gray-50`}
         >
           <div
-            className={`] rounded-xl border p-1.5 ${filtredPathName[2] == "analytics" ? "bg-emerald-50" : "bg-[#EFF6FF"} group-hover:bg-emerald-50`}
+            className={`rounded-xl ${isCollapsed ? "p-3" : "border p-1.5"} ${filtredPathName[2] == "analytics" ? "bg-emerald-50" : "bg-[#EFF6FF"} group-hover:bg-emerald-50`}
           >
             <FaChartPie
               className={`h-5 w-5 ${filtredPathName[2] == "analytics" ? "text-emerald-400" : "text-[#4B5563]"} group-hover:text-emerald-400`}
@@ -103,7 +121,7 @@ export const Sidebar = () => {
           className={`flex items-center space-x-5 ${isCollapsed ? "justify-center" : "px-4"} group py-2 text-gray-700 hover:border-y hover:bg-gray-50`}
         >
           <div
-            className={`rounded-xl border p-1.5 ${filtredPathName[2] == "settings" ? "bg-fuchsia-50" : "bg-[#EFF6FF]"} group-hover:bg-fuchsia-50`}
+            className={`rounded-xl ${isCollapsed ? "p-3" : "border p-1.5"} ${filtredPathName[2] == "settings" ? "bg-fuchsia-50" : "bg-[#EFF6FF]"} group-hover:bg-fuchsia-50`}
           >
             <RiSettings3Fill
               className={`h-5 w-5 ${filtredPathName[2] == "settings" ? "text-fuchsia-400" : "text-[#4B5563]"} group-hover:text-fuchsia-400`}
