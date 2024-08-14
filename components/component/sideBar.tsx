@@ -6,13 +6,12 @@ import { Logo } from "@/components/component/logo";
 import {
   MdKeyboardDoubleArrowLeft,
   MdKeyboardDoubleArrowRight,
-} from "react-icons/md";
-import {
   RiDashboardFill,
   RiSettings3Fill,
   RiLogoutCircleRFill,
-} from "react-icons/ri";
-import { FaMoneyBillWave, FaChartPie } from "react-icons/fa";
+  FaMoneyBillWave,
+  FaChartPie,
+} from "@/lib/icons";
 
 export const Sidebar = () => {
   const pathname = usePathname();
@@ -62,7 +61,6 @@ export const Sidebar = () => {
           </div>
         )}
       </div>
-      {/* ${isCollapsed ? "p-3" : "p-1.5 border"} */}
 
       <nav className="mt-4">
         {!isCollapsed && (

@@ -41,7 +41,7 @@ export default function Slate() {
         <div className="flex h-screen max-h-screen w-full">
           <Sidebar />
           <div className="relative h-screen w-full">
-            <EditorComponent />
+
             <ScreenComponent
               isDesktop={isDesktop}
               link={`https://slate.zapfolio.in/${user.id}`}

@@ -5,10 +5,6 @@ import { Analytics } from '@vercel/analytics/react';
 import { Toaster } from "@/components/ui/toaster"
 import {
   ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton
 } from "@clerk/nextjs"
 import { HeaderNav } from "@/components/component/headerNav"
 import { Fotter } from "@/components/component/fotter"
