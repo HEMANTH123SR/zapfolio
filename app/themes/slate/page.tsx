@@ -2,18 +2,25 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useUser } from "@clerk/clerk-react";
+import { usePathname } from "next/navigation";
 // custom components
 import { Sidebar } from "@/components/component/sideBar";
 import { ScreenComponent } from "@/components/component/themeScreenComponent";
 import { EditorComponent } from "@/components/component/themeEditorComponent";
 
-export default function Slate() {
+export default function Slate({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   const { user, isLoaded } = useUser();
   const router = useRouter();
+  const pathName = usePathname();
   const [userExistes, setUserExistes] = useState<boolean>(false);
   const [userDataLoaded, setUserDataLoaded] = useState<boolean>(false);
   const [isDesktop, setIsDesktop] = useState(true);
-
+  console.log("pathname ", pathName);
+  console.log("pathname state", pathName === "/themes/slate");
   const toggleDevice = () => {
     setIsDesktop(!isDesktop);
   };
@@ -40,22 +47,26 @@ export default function Slate() {
       return (
         <div className="flex h-screen max-h-screen w-full">
           <Sidebar />
-          <div className="relative h-screen w-full">
-
-            <ScreenComponent
-              isDesktop={isDesktop}
-              link={`https://slate.zapfolio.in/${user.id}`}
-              toggleDevice={toggleDevice}
-            />
-            <iframe
-              src={`https://slate.zapfolio.in/${user.id}`}
-              className={`${!isDesktop && "border"} hidden h-screen md:block`}
-              style={{
-                width: isDesktop ? "100%" : "375px",
-                margin: "auto",
-              }}
-            />
-          </div>
+          {pathName === "/themes/slate" ? (
+            <div className="relative h-screen w-full">
+              <EditorComponent />
+              <ScreenComponent
+                isDesktop={isDesktop}
+                link={`https://slate.zapfolio.in/${user.id}`}
+                toggleDevice={toggleDevice}
+              />
+              <iframe
+                src={`https://slate.zapfolio.in/${user.id}`}
+                className={`${!isDesktop && "border"} hidden h-screen md:block`}
+                style={{
+                  width: isDesktop ? "100%" : "375px",
+                  margin: "auto",
+                }}
+              />
+            </div>
+          ) : (
+            <div>{children}</div>
+          )}
         </div>
       );
     }

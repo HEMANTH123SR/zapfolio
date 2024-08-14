@@ -4,8 +4,17 @@ import {
   FaDesktop,
   FaMoneyBillWave,
   FaChartPie,
+  FaUser,
+  FaAddressCard,
 } from "react-icons/fa";
-import { FaXTwitter, FaLocationDot, FaYoutube } from "react-icons/fa6";
+
+import {
+  FaXTwitter,
+  FaLocationDot,
+  FaYoutube,
+  FaDatabase,
+} from "react-icons/fa6";
+
 import {
   MdDashboardCustomize,
   MdDesktopWindows,
@@ -20,7 +29,9 @@ import {
   RiDashboardFill,
   RiSettings3Fill,
   RiLogoutCircleRFill,
+  RiProfileFill
 } from "react-icons/ri";
+
 
 export {
   HiSquare3Stack3D,
@@ -42,4 +53,6 @@ export {
   MdKeyboardDoubleArrowRight,
   FaMoneyBillWave,
   FaChartPie,
+  FaAddressCard,
+  RiProfileFill
 };

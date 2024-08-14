@@ -11,11 +11,13 @@ import {
   RiLogoutCircleRFill,
   FaMoneyBillWave,
   FaChartPie,
+  RiProfileFill,
 } from "@/lib/icons";
 
 export const Sidebar = () => {
   const pathname = usePathname();
   const filtredPathName = pathname.split("/").filter((data) => data.length);
+  const lastPathname = pathname.split("/")[3];
   const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
   const toggleSidebar = () => setIsCollapsed(!isCollapsed);
 
@@ -69,20 +71,18 @@ export const Sidebar = () => {
           </div>
         )}
         <Link
-          href="/dashboard"
+          href="/profile"
           className={`flex items-center space-x-5 ${isCollapsed ? "justify-center" : "px-4"} group py-2 text-gray-700 hover:border-y hover:bg-gray-50`}
         >
           <div
             className={`rounded-xl ${filtredPathName.length == 2 ? "bg-blue-50" : "bg-[#EFF6FF]"} ${isCollapsed ? "p-3" : "border p-1.5"} group-hover:bg-blue-50`}
           >
-            <RiDashboardFill
+            <RiProfileFill
               className={`h-5 w-5 ${filtredPathName.length == 2 ? "text-blue-400" : "text-[#4B5563]"} group-hover:text-blue-400`}
             />
           </div>
 
-          {!isCollapsed && (
-            <span className="ml-2 font-semibold">Dashboard</span>
-          )}
+          {!isCollapsed && <span className="ml-2 font-semibold">Profile</span>}
         </Link>
         <Link
           href="/subscription"
@@ -100,18 +100,18 @@ export const Sidebar = () => {
           )}
         </Link>
         <Link
-          href="/analytics"
+          href="/dashboard"
           className={`flex items-center space-x-5 ${isCollapsed ? "justify-center" : "px-4"} group py-2 text-gray-700 hover:border-y hover:bg-gray-50`}
         >
           <div
             className={`rounded-xl ${isCollapsed ? "p-3" : "border p-1.5"} ${filtredPathName[2] == "analytics" ? "bg-emerald-50" : "bg-[#EFF6FF"} group-hover:bg-emerald-50`}
           >
-            <FaChartPie
+            <RiDashboardFill
               className={`h-5 w-5 ${filtredPathName[2] == "analytics" ? "text-emerald-400" : "text-[#4B5563]"} group-hover:text-emerald-400`}
             />
           </div>
           {!isCollapsed && (
-            <span className="ml-2 font-semibold">Analytics</span>
+            <span className="ml-2 font-semibold">Dashboard</span>
           )}
         </Link>
         <Link
@@ -128,7 +128,6 @@ export const Sidebar = () => {
           {!isCollapsed && <span className="ml-2 font-semibold">Settings</span>}
         </Link>
       </nav>
-
       {!isCollapsed && (
         <>
           <div className="mt-4 px-4 py-2">
