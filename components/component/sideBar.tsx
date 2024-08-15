@@ -23,7 +23,7 @@ export const Sidebar = () => {
 
   return (
     <div
-      className={`overflow-hidden border-r bg-white shadow-lg transition-all duration-300 ${isCollapsed ? "w-16" : "w-96"}`}
+      className={`overflow-hidden border-r bg-white shadow-lg transition-all duration-300 ${isCollapsed ? "w-16" : "max-w-72"}`}
     >
       <div
         className={`flex w-full items-center justify-between border-b bg-[#F5F6F8] ${isCollapsed ? "py-4" : "p-4"}`}
@@ -71,7 +71,7 @@ export const Sidebar = () => {
           </div>
         )}
         <Link
-          href="/profile"
+          href={`${pathname}`}
           className={`flex items-center space-x-5 ${isCollapsed ? "justify-center" : "px-4"} group py-2 text-gray-700 hover:border-y hover:bg-gray-50`}
         >
           <div
@@ -82,10 +82,10 @@ export const Sidebar = () => {
             />
           </div>
 
-          {!isCollapsed && <span className="ml-2 font-semibold">Profile</span>}
+          {!isCollapsed && <span className="ml-2 font-semibold">Preview</span>}
         </Link>
         <Link
-          href="/subscription"
+          href={`${pathname}/subscription`}
           className={`flex items-center space-x-5 ${isCollapsed ? "justify-center" : "px-4"} group py-2 text-gray-700 hover:border-y hover:bg-gray-50`}
         >
           <div
@@ -100,7 +100,7 @@ export const Sidebar = () => {
           )}
         </Link>
         <Link
-          href="/dashboard"
+          href={`${pathname}/dashboard`}
           className={`flex items-center space-x-5 ${isCollapsed ? "justify-center" : "px-4"} group py-2 text-gray-700 hover:border-y hover:bg-gray-50`}
         >
           <div
@@ -115,7 +115,7 @@ export const Sidebar = () => {
           )}
         </Link>
         <Link
-          href="/settings"
+          href={`${pathname}/settings`}
           className={`flex items-center space-x-5 ${isCollapsed ? "justify-center" : "px-4"} group py-2 text-gray-700 hover:border-y hover:bg-gray-50`}
         >
           <div
