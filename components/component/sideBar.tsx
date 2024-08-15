@@ -17,7 +17,7 @@ import {
 export const Sidebar = () => {
   const pathname = usePathname();
   const filtredPathName = pathname.split("/").filter((data) => data.length);
-  const themeRoute = `/theme/${filtredPathName[1]}`;
+  const themeRoute = `/themes/${filtredPathName[1]}`;
   console.log(filtredPathName);
   const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
   const toggleSidebar = () => setIsCollapsed(!isCollapsed);
@@ -105,7 +105,7 @@ export const Sidebar = () => {
           className={`flex items-center space-x-5 ${isCollapsed ? "justify-center" : "px-4"} group py-2 text-gray-700 hover:border-y hover:bg-gray-50`}
         >
           <div
-            className={`rounded-xl ${isCollapsed ? "p-3" : "border p-1.5"} ${filtredPathName[2] == "dashboard" ? "bg-emerald-50" : "bg-[#EFF6FF"} group-hover:bg-emerald-50`}
+            className={`rounded-xl ${isCollapsed ? "p-3" : "border p-1.5"} ${filtredPathName[2] == "dashboard" ? "bg-emerald-50" : "bg-[#EFF6FF]"} group-hover:bg-emerald-50`}
           >
             <RiDashboardFill
               className={`h-5 w-5 ${filtredPathName[2] == "dashboard" ? "text-emerald-400" : "text-[#4B5563]"} group-hover:text-emerald-400`}
