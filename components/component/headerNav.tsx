@@ -28,14 +28,14 @@ import {
   Twitter,
   HeartHandshake,
   Hand,
-  AlertCircle
+  AlertCircle,
 } from "lucide-react";
 
 export const HeaderNav = () => {
   const pathName = usePathname();
   const splitedPathName = pathName.split("/");
   const applyThemeEffect =
-    splitedPathName[1] === "themes" && splitedPathName.length === 3;
+    splitedPathName[1] === "themes" && splitedPathName.length >= 3
   const [isScrolled, setIsScrolled] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
@@ -50,7 +50,6 @@ export const HeaderNav = () => {
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-
     };
   }, []);
 
@@ -62,8 +61,8 @@ export const HeaderNav = () => {
     <Sheet>
       <header
         className={`sticky top-0 z-50 flex w-full max-w-[1550px] items-center justify-between px-3 py-3.5 text-black transition-colors duration-300 md:px-7 ${isScrolled
-          ? "border-b bg-white bg-opacity-70 backdrop-blur-md backdrop-filter"
-          : "bg-white"
+            ? "border-b bg-white bg-opacity-70 backdrop-blur-md backdrop-filter"
+            : "bg-white"
           }`}
       >
         {/* left navigation consist of logo and navigation links  */}
@@ -145,7 +144,7 @@ export const HeaderNav = () => {
       </header>
       <SheetContent side={"left"} className="w-full max-w-96 md:hidden">
         <SheetHeader className="mr-6">
-          <SheetTitle className="flex justify-center bg-[#FF560E] py-1 rounded-md">
+          <SheetTitle className="flex justify-center rounded-md bg-[#FF560E] py-1">
             {/* <img src="/zapfolio-logo/1.png" className="w-4/6" /> */}
           </SheetTitle>
           <SheetDescription>
@@ -153,7 +152,7 @@ export const HeaderNav = () => {
           </SheetDescription>
         </SheetHeader>
         <ScrollArea>
-          <div className={`mt-4 flex flex-col space-y-6 sm:space-y-5 h-[66vh]`}>
+          <div className={`mt-4 flex h-[66vh] flex-col space-y-6 sm:space-y-5`}>
             <Link
               href={"/user"}
               className="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100"
@@ -232,7 +231,7 @@ export const HeaderNav = () => {
         </ScrollArea>
 
         <SheetFooter>
-          <div className="mt-auto  flex w-full h-full justify-around items-center border-t border-gray-200 px-4 pt-7">
+          <div className="mt-auto flex h-full w-full items-center justify-around border-t border-gray-200 px-4 pt-7">
             <a
               className="flex items-center text-gray-700 hover:text-gray-500"
               href="#"

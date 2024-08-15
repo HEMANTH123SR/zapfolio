@@ -6,7 +6,7 @@ export const Fotter = () => {
   const pathName = usePathname();
   const splitedPathName = pathName.split("/");
   const applyThemeEffect =
-    splitedPathName[1] === "themes" && splitedPathName.length === 3;
+    splitedPathName[1] === "themes" && splitedPathName.length >= 3;
   if (applyThemeEffect) {
     return <></>;
   }

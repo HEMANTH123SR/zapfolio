@@ -35,8 +35,8 @@ export default function Slate({
           <Skeleton className="mb-2 h-4 w-full" />
         </div>
       </Skeleton>
-      <div className="flex-grow p-6">
-        <Skeleton className="mb-4 h-32 w-32 rounded-full" />
+      <div className="flex-grow p-16">
+        <Skeleton className="mb-4 h-32 w-32 rounded-lg" />
         <Skeleton className="mb-4 h-10 w-64" />
         <Skeleton className="mb-2 h-4 w-full max-w-2xl" />
         <Skeleton className="mb-6 h-4 w-full max-w-2xl" />
