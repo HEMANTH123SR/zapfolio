@@ -36,7 +36,9 @@ export const HeaderNav = () => {
   const splitedPathName = pathName.split("/");
   const applyThemeEffect =
     splitedPathName[1] === "themes" && splitedPathName.length >= 3
+  const applyThemeEffectEditor = pathName.includes("editor");
   const [isScrolled, setIsScrolled] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -53,7 +55,7 @@ export const HeaderNav = () => {
     };
   }, []);
 
-  if (applyThemeEffect) {
+  if (applyThemeEffect || applyThemeEffectEditor) {
     return <></>;
   }
 
@@ -61,8 +63,8 @@ export const HeaderNav = () => {
     <Sheet>
       <header
         className={`sticky top-0 z-50 flex w-full max-w-[1550px] items-center justify-between px-3 py-3.5 text-black transition-colors duration-300 md:px-7 ${isScrolled
-            ? "border-b bg-white bg-opacity-70 backdrop-blur-md backdrop-filter"
-            : "bg-white"
+          ? "border-b bg-white bg-opacity-70 backdrop-blur-md backdrop-filter"
+          : "bg-white"
           }`}
       >
         {/* left navigation consist of logo and navigation links  */}

@@ -16,7 +16,7 @@ export default function Slate({
   if (isLoaded) {
     if (user?.publicMetadata.linkedinProfileId) {
       return (
-        <div className="flex h-screen max-h-screen w-full">
+        <div className="flex  h-screen max-h-screen w-full">
           <Sidebar />
           {children}
         </div>

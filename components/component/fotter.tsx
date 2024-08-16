@@ -7,7 +7,8 @@ export const Fotter = () => {
   const splitedPathName = pathName.split("/");
   const applyThemeEffect =
     splitedPathName[1] === "themes" && splitedPathName.length >= 3;
-  if (applyThemeEffect) {
+  const applyThemeEffectEditor = pathName.includes("editor");
+  if (applyThemeEffect || applyThemeEffectEditor) {
     return <></>;
   }
   return (
