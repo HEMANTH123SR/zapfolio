@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import {
     Sheet,
     SheetContent,
@@ -10,19 +10,16 @@ import {
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { MdDelete } from "@/lib/icons";
-import { InputField } from "@/components/component/inputField"
-const ExperienceEditor = () => {
-
+import { InputField } from "@/components/component/inputField";
+const ClientEditor = () => {
     return (
         <Sheet>
             <div className="h-screen max-h-screen w-full overflow-y-auto overflow-x-hidden">
                 <div className="m-8 ml-16 flex w-full flex-col">
                     <header className="mb-8">
-                        <h1 className="text-4xl font-extrabold">Edit Your Experience</h1>
+                        <h1 className="text-4xl font-extrabold">Edit Your Clients</h1>
                         <p className="mt-2 text-sm text-gray-600">
-                            Showcase your professional journey and manage your profile
-                            effortlessly.
+                            Manage your client information and projects effortlessly.
                         </p>
                         <div className="mt-4 h-1 w-32 rounded-xl bg-[#FF560E]"></div>
                     </header>
@@ -30,7 +27,7 @@ const ExperienceEditor = () => {
                     <div className="mt-6 flex flex-col space-y-9">
                         <SheetTrigger asChild>
                             <Button className="w-48 bg-[#FF560E] text-base hover:bg-orange-500">
-                                Add Experience
+                                Add Client
                             </Button>
                         </SheetTrigger>
                         {/* render cards here */}
@@ -43,50 +40,20 @@ const ExperienceEditor = () => {
             >
                 <SheetHeader>
                     <SheetTitle className="w-full text-center">
-                        Add Your Experiecnce
+                        Add Your Client Details
                     </SheetTitle>
                     <div className="flex w-full flex-col items-center justify-center space-y-6">
                         <InputField
-                            label="Company Name"
-                            id="companyName"
+                            label="Client Name"
+                            id="clientName"
                             type="text"
-                            placeholder="Enter your company name"
+                            placeholder="Enter the client name"
                         />
                         <InputField
-                            label="Company Logo"
-                            id="companyLogo"
-                            type="file"
-                            accept="image/*"
-                        />
-                        <InputField
-                            label="Job Title"
-                            id="title"
+                            label="Project Title"
+                            id="projectTitle"
                             type="text"
-                            placeholder="Enter your job title"
-                        />
-                        <InputField
-                            label="Company Industry"
-                            id="companyIndustry"
-                            type="text"
-                            placeholder="Enter your Company Industry"
-                        />
-                        <InputField
-                            label="Company Location"
-                            id="location"
-                            type="text"
-                            placeholder="Country / City"
-                        />
-                        <InputField
-                            label="Company Url"
-                            id="companyUrl"
-                            type="url"
-                            placeholder="Add your company website url"
-                        />
-                        <InputField
-                            label="Employment Type"
-                            id="employmentType"
-                            type="text"
-                            placeholder="Full-time, Part-time, etc."
+                            placeholder="Enter the project title"
                         />
                         <div className="flex w-8/12 flex-col space-y-1">
                             <Label htmlFor="description" className="pl-1.5 text-base">
@@ -96,10 +63,22 @@ const ExperienceEditor = () => {
                                 id="description"
                                 name="description"
                                 rows={3}
-                                placeholder="Provide a description"
+                                placeholder="Provide a description of the project"
                                 className="resize-none"
                             />
                         </div>
+                        <InputField
+                            label="Client Website"
+                            id="clientWebsite"
+                            type="url"
+                            placeholder="Enter the client's website URL"
+                        />
+                        <InputField
+                            label="Media"
+                            id="media"
+                            type="url"
+                            placeholder="Enter media URL (if any)"
+                        />
                         <Button
                             type="submit"
                             className="w-8/12 bg-[#FF560E] hover:bg-[#f4733b]"
@@ -115,5 +94,4 @@ const ExperienceEditor = () => {
 
 
 
-
-export default ExperienceEditor;
+export default ClientEditor;

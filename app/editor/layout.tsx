@@ -2,7 +2,6 @@ import Link from "next/link";
 import React from "react";
 import { Logo } from "@/components/component/logo";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Separator } from "@/components/ui/separator";
 
 const EditorLayout = ({ children }: { children: React.ReactNode }) => {
     return (
@@ -24,22 +23,25 @@ const EditorLayout = ({ children }: { children: React.ReactNode }) => {
                     <div className="flex flex-col">
                         {[
                             "Personal Info",
+                            "Professional Detail",
                             "Experience",
                             "Education",
-                            "Projects",
-                            "Achievements",
-                            "Clients",
-                            "Professional Details",
+                            "Project",
+                            "Articles",
+                            "Award",
+                            "Certification",
+                            "Client",
+                            "Custom Section",
+                            "Hackathon",
                             "Media",
-                            "Social ",
                             "Others",
                         ].map((data, index) => (
                             <Link
                                 key={index}
-                                href={`/editor/${data.split(" ").join("_").toLowerCase()}`}
-                                className="group flex items-center space-x-5 border-b p-4 text-gray-700 hover:border-y hover:bg-gray-50"
+                                href={`/editor/${data.split(" ").join("-").toLowerCase()}`}
+                                className="group flex items-center space-x-5 border-b p-4 py-3 text-gray-700 hover:border-y hover:bg-gray-50"
                             >
-                                <span className="ml-2 font-semibold">{data}</span>
+                                <span className="ml-2 text-sm">{data}</span>
                             </Link>
                         ))}
                     </div>

@@ -8,17 +8,19 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { MdDelete } from "@/lib/icons";
-import { InputField } from "@/components/component/inputField";
-const EducationEditor = () => {
+import { InputFieldProps } from "@/lib/types/detailedComponentBreakdown.types";
+const CertEditor = () => {
   return (
     <Sheet>
       <div className="h-screen max-h-screen w-full overflow-y-auto overflow-x-hidden">
-        <div className="m-8 flex w-full flex-col">
+        <div className="m-8 ml-16 flex w-full flex-col">
           <header className="mb-8">
-            <h1 className="text-4xl font-extrabold">Edit Your Education</h1>
+            <h1 className="text-4xl font-extrabold">
+              Edit Your Certifications
+            </h1>
             <p className="mt-2 text-sm text-gray-600">
               Showcase your professional journey and manage your profile
               effortlessly.
@@ -29,7 +31,7 @@ const EducationEditor = () => {
           <div className="mt-6 flex flex-col space-y-9">
             <SheetTrigger asChild>
               <Button className="w-48 bg-[#FF560E] text-base hover:bg-orange-500">
-                Add Education
+                Add Certifications
               </Button>
             </SheetTrigger>
             {/* render cards here */}
@@ -42,40 +44,26 @@ const EducationEditor = () => {
       >
         <SheetHeader>
           <SheetTitle className="w-full text-center">
-            Add Your Education
+            Add Your Certifications Details
           </SheetTitle>
           <div className="flex w-full flex-col items-center justify-center space-y-6">
             <InputField
-              label="School Name"
-              id="schoolName"
+              label="Cert Title"
+              id="title"
               type="text"
-              placeholder="Enter your School name"
+              placeholder="Enter your cert title"
             />
-
             <InputField
-              label="Degree"
-              id="degree"
+              label="Issued Company Name"
+              id="companyName"
               type="text"
-              placeholder="Enter your Degree"
+              placeholder="Enter issued company name"
             />
             <InputField
-              label="Grade"
-              id="grade"
-              type="number"
-              placeholder="Enter your degree"
-            />
-            <InputField
-              label="Field Of Study"
-              id="fieldOfStudy"
-              type="text"
-              placeholder="Enter your field of study"
-            />
-
-            <InputField
-              label="School Url"
-              id="schoolUrl"
-              type="url"
-              placeholder="Add your company website url"
+              label="Issued Company  Logo"
+              id="logo"
+              type="file"
+              accept="image/*"
             />
             <div className="flex w-8/12 flex-col space-y-1">
               <Label htmlFor="description" className="pl-1.5 text-base">
@@ -102,4 +90,26 @@ const EducationEditor = () => {
   );
 };
 
-export default EducationEditor;
+const InputField: React.FC<InputFieldProps> = ({
+  label,
+  id,
+  type,
+  placeholder,
+  accept,
+}) => (
+  <div className="flex w-8/12 flex-col space-y-1">
+    <Label htmlFor={id} className="pl-1.5 text-base">
+      {label}
+    </Label>
+    <Input
+      type={type}
+      id={id}
+      name={id}
+      className="border p-2"
+      placeholder={placeholder}
+      accept={accept}
+    />
+  </div>
+);
+
+export default CertEditor;
