@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import {
     Sheet,
     SheetContent,
@@ -8,13 +8,38 @@ import {
     SheetTrigger,
 } from "@/components/ui/sheet";
 import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { InputField } from "@/components/component/inputField"
 
+interface Award {
+    title: string;
+    description: string | null;
+    awardingOrganization: string | null;
+    dateReceived: string | null;
+    url: string | null;
+}
 
 const AwardEditor = () => {
+    const [award, setAward] = useState<Award>({
+        title: "",
+        description: null,
+        awardingOrganization: null,
+        dateReceived: null,
+        url: null,
+    });
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setAward(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        console.log(award);
+        // Here you would typically send the award data to your backend or perform other actions
+    };
+
     return (
         <Sheet>
             <div className="h-screen max-h-screen w-full overflow-y-auto overflow-x-hidden">
@@ -45,12 +70,16 @@ const AwardEditor = () => {
                     <SheetTitle className="w-full text-center">
                         Add Your Award Details
                     </SheetTitle>
-                    <div className="flex w-full flex-col items-center justify-center space-y-6">
+                    <form onSubmit={handleSubmit} className="flex w-full flex-col items-center justify-center space-y-6">
                         <InputField
                             label="Award Title"
                             id="title"
+                            name="title"
                             type="text"
                             placeholder="Enter the award title"
+                            value={award.title}
+                            onChange={handleInputChange}
+                            required
                         />
                         <div className="flex w-8/12 flex-col space-y-1">
                             <Label htmlFor="description" className="pl-1.5 text-base">
@@ -62,24 +91,35 @@ const AwardEditor = () => {
                                 rows={3}
                                 placeholder="Provide a description of the award"
                                 className="resize-none"
+                                value={award.description || ""}
+                                onChange={handleInputChange}
                             />
                         </div>
                         <InputField
                             label="Awarding Organization"
                             id="awardingOrganization"
+                            name="awardingOrganization"
                             type="text"
                             placeholder="Enter the name of the awarding organization"
+                            value={award.awardingOrganization || ""}
+                            onChange={handleInputChange}
                         />
                         <InputField
                             label="Date Received"
                             id="dateReceived"
+                            name="dateReceived"
                             type="date"
+                            value={award.dateReceived || ""}
+                            onChange={handleInputChange}
                         />
                         <InputField
                             label="URL"
                             id="url"
+                            name="url"
                             type="url"
                             placeholder="Enter a related URL (if any)"
+                            value={award.url || ""}
+                            onChange={handleInputChange}
                         />
                         <Button
                             type="submit"
@@ -87,13 +127,11 @@ const AwardEditor = () => {
                         >
                             Submit
                         </Button>
-                    </div>
+                    </form>
                 </SheetHeader>
             </SheetContent>
         </Sheet>
     );
 };
-
-
 
 export default AwardEditor;

@@ -11,8 +11,41 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { InputFieldProps } from "@/lib/types/detailedComponentBreakdown.types";
+import { InputField } from "@/components/component/inputField"
+
+interface Certification {
+  name: string;
+  companyName: string;
+  companyLogo: string | null;
+  description?: string | null;
+}
+
 const CertEditor = () => {
+  const [certification, setCertification] = useState<Certification>({
+    name: "",
+    companyName: "",
+    companyLogo: null,
+    description: null,
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setCertification(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      const file = e.target.files[0];
+      setCertification(prev => ({ ...prev, companyLogo: URL.createObjectURL(file) }));
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log(certification);
+    // Here you would typically send the certification data to your backend or perform other actions
+  };
+
   return (
     <Sheet>
       <div className="h-screen max-h-screen w-full overflow-y-auto overflow-x-hidden">
@@ -46,24 +79,34 @@ const CertEditor = () => {
           <SheetTitle className="w-full text-center">
             Add Your Certifications Details
           </SheetTitle>
-          <div className="flex w-full flex-col items-center justify-center space-y-6">
+          <form onSubmit={handleSubmit} className="flex w-full flex-col items-center justify-center space-y-6">
             <InputField
               label="Cert Title"
-              id="title"
+              id="name"
+              name="name"
               type="text"
               placeholder="Enter your cert title"
+              value={certification.name}
+              onChange={handleInputChange}
+              required
             />
             <InputField
               label="Issued Company Name"
               id="companyName"
+              name="companyName"
               type="text"
               placeholder="Enter issued company name"
+              value={certification.companyName}
+              onChange={handleInputChange}
+              required
             />
             <InputField
-              label="Issued Company  Logo"
-              id="logo"
+              label="Issued Company Logo"
+              id="companyLogo"
+              name="companyLogo"
               type="file"
               accept="image/*"
+              onChange={handleFileChange}
             />
             <div className="flex w-8/12 flex-col space-y-1">
               <Label htmlFor="description" className="pl-1.5 text-base">
@@ -75,6 +118,8 @@ const CertEditor = () => {
                 rows={3}
                 placeholder="Provide a description"
                 className="resize-none"
+                value={certification.description || ""}
+                onChange={handleInputChange}
               />
             </div>
             <Button
@@ -83,33 +128,11 @@ const CertEditor = () => {
             >
               Submit
             </Button>
-          </div>
+          </form>
         </SheetHeader>
       </SheetContent>
     </Sheet>
   );
 };
-
-const InputField: React.FC<InputFieldProps> = ({
-  label,
-  id,
-  type,
-  placeholder,
-  accept,
-}) => (
-  <div className="flex w-8/12 flex-col space-y-1">
-    <Label htmlFor={id} className="pl-1.5 text-base">
-      {label}
-    </Label>
-    <Input
-      type={type}
-      id={id}
-      name={id}
-      className="border p-2"
-      placeholder={placeholder}
-      accept={accept}
-    />
-  </div>
-);
 
 export default CertEditor;

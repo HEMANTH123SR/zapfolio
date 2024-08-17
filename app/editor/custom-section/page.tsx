@@ -13,13 +13,42 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { InputField } from "@/components/component/inputField"
 
+interface CustomSection {
+  title: string;
+  content: string;
+  picture?: string | null;
+  order?: number | null;
+  url?: string | null;
+}
+
 const CustomSectionEditor = () => {
+    const [customSection, setCustomSection] = useState<CustomSection>({
+        title: "",
+        content: "",
+        picture: null,
+        order: null,
+        url: null,
+    });
+
     const [pictureFile, setPictureFile] = useState<File | null>(null);
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setCustomSection(prev => ({ ...prev, [name]: value }));
+    };
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (event.target.files && event.target.files[0]) {
-            setPictureFile(event.target.files[0]);
+            const file = event.target.files[0];
+            setPictureFile(file);
+            setCustomSection(prev => ({ ...prev, picture: URL.createObjectURL(file) }));
         }
+    };
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        console.log(customSection);
+        // Here you would typically send the custom section data to your backend or perform other actions
     };
 
     return (
@@ -52,12 +81,16 @@ const CustomSectionEditor = () => {
                     <SheetTitle className="w-full text-center">
                         Add Custom Section Details
                     </SheetTitle>
-                    <div className="flex w-full flex-col items-center justify-center space-y-6">
+                    <form onSubmit={handleSubmit} className="flex w-full flex-col items-center justify-center space-y-6">
                         <InputField
                             label="Title"
                             id="title"
+                            name="title"
                             type="text"
                             placeholder="Enter the section title"
+                            value={customSection.title}
+                            onChange={handleInputChange}
+                            required
                         />
                         <div className="flex w-8/12 flex-col space-y-1">
                             <Label htmlFor="content" className="pl-1.5 text-base">
@@ -69,6 +102,9 @@ const CustomSectionEditor = () => {
                                 rows={5}
                                 placeholder="Enter the section content"
                                 className="resize-none"
+                                value={customSection.content}
+                                onChange={handleInputChange}
+                                required
                             />
                         </div>
                         <div className="flex w-8/12 flex-col space-y-1">
@@ -92,14 +128,20 @@ const CustomSectionEditor = () => {
                         <InputField
                             label="Order"
                             id="order"
+                            name="order"
                             type="number"
                             placeholder="Enter the section order (optional)"
+                            value={customSection.order || ""}
+                            onChange={handleInputChange}
                         />
                         <InputField
                             label="URL"
                             id="url"
+                            name="url"
                             type="url"
                             placeholder="Enter a related URL (optional)"
+                            value={customSection.url || ""}
+                            onChange={handleInputChange}
                         />
                         <Button
                             type="submit"
@@ -107,13 +149,11 @@ const CustomSectionEditor = () => {
                         >
                             Submit
                         </Button>
-                    </div>
+                    </form>
                 </SheetHeader>
             </SheetContent>
         </Sheet>
     );
 };
-
-;
 
 export default CustomSectionEditor;

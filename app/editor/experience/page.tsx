@@ -12,7 +12,48 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { MdDelete } from "@/lib/icons";
 import { InputField } from "@/components/component/inputField"
+
+interface Company {
+  companyName: string;
+  companyUrl: string | null;
+  companyLogo: string | null;
+  companyIndustry: string | null;
+  title: string;
+  location: string | null;
+  description: string | null;
+  employmentType: string | null;
+}
+
 const ExperienceEditor = () => {
+    const [company, setCompany] = useState<Company>({
+        companyName: "",
+        companyUrl: null,
+        companyLogo: null,
+        companyIndustry: null,
+        title: "",
+        location: null,
+        description: null,
+        employmentType: null,
+    });
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setCompany(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files && e.target.files[0]) {
+            const file = e.target.files[0];
+            setCompany(prev => ({ ...prev, companyLogo: URL.createObjectURL(file) }));
+        }
+    };
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        // Here you would typically send the company data to your backend or perform other actions
+        console.log(company);
+        // Reset the form or close the sheet after submission
+    };
 
     return (
         <Sheet>
@@ -43,50 +84,72 @@ const ExperienceEditor = () => {
             >
                 <SheetHeader>
                     <SheetTitle className="w-full text-center">
-                        Add Your Experiecnce
+                        Add Your Experience
                     </SheetTitle>
-                    <div className="flex w-full flex-col items-center justify-center space-y-6">
+                    <form onSubmit={handleSubmit} className="flex w-full flex-col items-center justify-center space-y-6">
                         <InputField
                             label="Company Name"
                             id="companyName"
+                            name="companyName"
                             type="text"
                             placeholder="Enter your company name"
+                            value={company.companyName}
+                            onChange={handleInputChange}
+                            required
                         />
                         <InputField
                             label="Company Logo"
                             id="companyLogo"
+                            name="companyLogo"
                             type="file"
                             accept="image/*"
+                            onChange={handleFileChange}
                         />
                         <InputField
                             label="Job Title"
                             id="title"
+                            name="title"
                             type="text"
                             placeholder="Enter your job title"
+                            value={company.title}
+                            onChange={handleInputChange}
+                            required
                         />
                         <InputField
                             label="Company Industry"
                             id="companyIndustry"
+                            name="companyIndustry"
                             type="text"
                             placeholder="Enter your Company Industry"
+                            value={company.companyIndustry || ""}
+                            onChange={handleInputChange}
                         />
                         <InputField
                             label="Company Location"
                             id="location"
+                            name="location"
                             type="text"
                             placeholder="Country / City"
+                            value={company.location || ""}
+                            onChange={handleInputChange}
                         />
                         <InputField
                             label="Company Url"
                             id="companyUrl"
+                            name="companyUrl"
                             type="url"
                             placeholder="Add your company website url"
+                            value={company.companyUrl || ""}
+                            onChange={handleInputChange}
                         />
                         <InputField
                             label="Employment Type"
                             id="employmentType"
+                            name="employmentType"
                             type="text"
                             placeholder="Full-time, Part-time, etc."
+                            value={company.employmentType || ""}
+                            onChange={handleInputChange}
                         />
                         <div className="flex w-8/12 flex-col space-y-1">
                             <Label htmlFor="description" className="pl-1.5 text-base">
@@ -98,6 +161,8 @@ const ExperienceEditor = () => {
                                 rows={3}
                                 placeholder="Provide a description"
                                 className="resize-none"
+                                value={company.description || ""}
+                                onChange={handleInputChange}
                             />
                         </div>
                         <Button
@@ -106,14 +171,11 @@ const ExperienceEditor = () => {
                         >
                             Submit
                         </Button>
-                    </div>
+                    </form>
                 </SheetHeader>
             </SheetContent>
         </Sheet>
     );
 };
-
-
-
 
 export default ExperienceEditor;
