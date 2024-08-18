@@ -13,14 +13,14 @@ import { Button } from "@/components/ui/button";
 import { InputField } from "@/components/component/inputField";
 
 interface Client {
-  clientName: string;
-  projectTitle?: string | null;
-  description?: string | null;
-  clientWebsite?: string | null;
-  media?: string | null;
+    clientName: string;
+    projectTitle?: string | null;
+    description?: string | null;
+    clientWebsite?: string | null;
+    media?: string | null;
 }
 
-const ClientEditor = () => {
+export const ClientEditor = () => {
     const [client, setClient] = useState<Client>({
         clientName: "",
         projectTitle: null,
@@ -42,7 +42,7 @@ const ClientEditor = () => {
 
     return (
         <Sheet>
-            <div className="h-screen max-h-screen w-full overflow-y-auto overflow-x-hidden">
+            <div className="h-full  w-full overflow-y-auto overflow-x-hidden">
                 <div className="m-8 ml-16 flex w-full flex-col">
                     <header className="mb-8">
                         <h1 className="text-4xl font-extrabold">Edit Your Clients</h1>
@@ -135,4 +135,3 @@ const ClientEditor = () => {
     );
 };
 
-export default ClientEditor;

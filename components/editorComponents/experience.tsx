@@ -14,17 +14,17 @@ import { MdDelete } from "@/lib/icons";
 import { InputField } from "@/components/component/inputField"
 
 interface Company {
-  companyName: string;
-  companyUrl: string | null;
-  companyLogo: string | null;
-  companyIndustry: string | null;
-  title: string;
-  location: string | null;
-  description: string | null;
-  employmentType: string | null;
+    companyName: string;
+    companyUrl: string | null;
+    companyLogo: string | null;
+    companyIndustry: string | null;
+    title: string;
+    location: string | null;
+    description: string | null;
+    employmentType: string | null;
 }
 
-const ExperienceEditor = () => {
+export const ExperienceEditor = () => {
     const [company, setCompany] = useState<Company>({
         companyName: "",
         companyUrl: null,
@@ -57,7 +57,7 @@ const ExperienceEditor = () => {
 
     return (
         <Sheet>
-            <div className="h-screen max-h-screen w-full overflow-y-auto overflow-x-hidden">
+            <div className="h-full  w-full overflow-y-auto overflow-x-hidden">
                 <div className="m-8 ml-16 flex w-full flex-col">
                     <header className="mb-8">
                         <h1 className="text-4xl font-extrabold">Edit Your Experience</h1>
@@ -178,4 +178,3 @@ const ExperienceEditor = () => {
     );
 };
 
-export default ExperienceEditor;

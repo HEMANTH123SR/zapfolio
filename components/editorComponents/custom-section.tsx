@@ -14,14 +14,14 @@ import { Button } from "@/components/ui/button";
 import { InputField } from "@/components/component/inputField"
 
 interface CustomSection {
-  title: string;
-  content: string;
-  picture?: string | null;
-  order?: number | null;
-  url?: string | null;
+    title: string;
+    content: string;
+    picture?: string | null;
+    order?: number | null;
+    url?: string | null;
 }
 
-const CustomSectionEditor = () => {
+export const CustomSectionEditor = () => {
     const [customSection, setCustomSection] = useState<CustomSection>({
         title: "",
         content: "",
@@ -53,7 +53,7 @@ const CustomSectionEditor = () => {
 
     return (
         <Sheet>
-            <div className="h-screen max-h-screen w-full overflow-y-auto overflow-x-hidden">
+            <div className="h-full  w-full overflow-y-auto overflow-x-hidden">
                 <div className="m-8 ml-16 flex w-full flex-col">
                     <header className="mb-8">
                         <h1 className="text-4xl font-extrabold">Edit Custom Sections</h1>
@@ -156,4 +156,3 @@ const CustomSectionEditor = () => {
     );
 };
 
-export default CustomSectionEditor;

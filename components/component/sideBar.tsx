@@ -13,6 +13,10 @@ import {
   FaChartPie,
   RiProfileFill,
 } from "@/lib/icons";
+import { AiFillEdit } from "react-icons/ai";
+import { IoStatsChart } from "react-icons/io5";
+import { IoMdStats } from "react-icons/io";
+
 
 export const Sidebar = () => {
   const pathname = usePathname();
@@ -92,49 +96,44 @@ export const Sidebar = () => {
           {!isCollapsed && <span className="ml-2 font-semibold">Preview</span>}
         </Link>
         <Link
-          href={`${themeRoute}/subscription`}
+          href={`${themeRoute}/editor`}
           className={`flex items-center space-x-5 ${isCollapsed ? "justify-center" : "px-4"
             } group py-2 text-gray-700 hover:border-y hover:bg-gray-50`}
         >
           <div
-            className={`rounded-xl ${isCollapsed ? "p-3" : "border p-1.5"} ${filtredPathName[2] == "subscription"
-              ? "bg-amber-50"
-              : "bg-[#EFF6FF]"
+            className={`rounded-xl ${isCollapsed ? "p-3" : "border p-1.5"} ${filtredPathName[2] == "editor" ? "bg-emerald-50" : "bg-[#EFF6FF]"
+              } group-hover:bg-emerald-50`}
+          >
+            <AiFillEdit
+              className={`h-5 w-5 ${filtredPathName[2] == "editor"
+                  ? "text-emerald-400"
+                  : "text-[#4B5563]"
+                } group-hover:text-emerald-400`}
+            />
+          </div>
+          {!isCollapsed && <span className="ml-2 font-semibold">Editor</span>}
+        </Link>
+        <Link
+          href={`${themeRoute}/analytics`}
+          className={`flex items-center space-x-5 ${isCollapsed ? "justify-center" : "px-4"
+            } group py-2 text-gray-700 hover:border-y hover:bg-gray-50`}
+        >
+          <div
+            className={`rounded-xl ${isCollapsed ? "p-3" : "border p-1.5"} ${filtredPathName[2] == "analytics" ? "bg-amber-50" : "bg-[#EFF6FF]"
               } group-hover:bg-amber-50`}
           >
-            <FaMoneyBillWave
-              className={`h-5 w-5 ${filtredPathName[2] == "subscription"
-                ? "text-amber-400"
-                : "text-[#4B5563]"
+            <IoMdStats
+              className={`h-5 w-5 ${filtredPathName[2] == "analytics"
+                  ? "text-amber-400"
+                  : "text-[#4B5563]"
                 } group-hover:text-amber-400`}
             />
           </div>
           {!isCollapsed && (
-            <span className="ml-2 font-semibold">Subscription</span>
+            <span className="ml-2 font-semibold">Analytics</span>
           )}
         </Link>
-        <Link
-          href={`${themeRoute}/dashboard`}
-          className={`flex items-center space-x-5 ${isCollapsed ? "justify-center" : "px-4"
-            } group py-2 text-gray-700 hover:border-y hover:bg-gray-50`}
-        >
-          <div
-            className={`rounded-xl ${isCollapsed ? "p-3" : "border p-1.5"} ${filtredPathName[2] == "dashboard"
-              ? "bg-emerald-50"
-              : "bg-[#EFF6FF]"
-              } group-hover:bg-emerald-50`}
-          >
-            <RiDashboardFill
-              className={`h-5 w-5 ${filtredPathName[2] == "dashboard"
-                ? "text-emerald-400"
-                : "text-[#4B5563]"
-                } group-hover:text-emerald-400`}
-            />
-          </div>
-          {!isCollapsed && (
-            <span className="ml-2 font-semibold">Dashboard</span>
-          )}
-        </Link>
+
         <Link
           href={`${themeRoute}/settings`}
           className={`flex items-center space-x-5 ${isCollapsed ? "justify-center" : "px-4"
@@ -142,14 +141,14 @@ export const Sidebar = () => {
         >
           <div
             className={`rounded-xl ${isCollapsed ? "p-3" : "border p-1.5"} ${filtredPathName[2] == "settings"
-              ? "bg-fuchsia-50"
-              : "bg-[#EFF6FF]"
+                ? "bg-fuchsia-50"
+                : "bg-[#EFF6FF]"
               } group-hover:bg-fuchsia-50`}
           >
             <RiSettings3Fill
               className={`h-5 w-5 ${filtredPathName[2] == "settings"
-                ? "text-fuchsia-400"
-                : "text-[#4B5563]"
+                  ? "text-fuchsia-400"
+                  : "text-[#4B5563]"
                 } group-hover:text-fuchsia-400`}
             />
           </div>

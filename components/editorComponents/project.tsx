@@ -11,25 +11,53 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { InputField } from "@/components/component/inputField";
 
-interface InputFieldProps {
-    label: string;
-    id: string;
-    type: string;
-    placeholder?: string;
-    accept?: string;
+interface ProjectState {
+    title: string;
+    projectImage: File | null;
+    projectLink: string;
+    techStack: string[];
+    description: string;
 }
 
-const ProjectEditor = () => {
-    const [technologies, setTechnologies] = useState<string[]>([]);
+export const ProjectEditor = () => {
+    const [project, setProject] = useState<ProjectState>({
+        title: "",
+        projectImage: null,
+        projectLink: "",
+        techStack: [],
+        description: "",
+    });
+
     const [currentTech, setCurrentTech] = useState('');
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setProject(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files && e.target.files[0]) {
+            setProject(prev => ({ ...prev, projectImage: e.target.files![0] }));
+        }
+    };
 
     const handleAddTech = () => {
         if (currentTech.trim()) {
-            setTechnologies([...technologies, currentTech.trim()]);
+            setProject(prev => ({
+                ...prev,
+                techStack: [...prev.techStack, currentTech.trim()]
+            }));
             setCurrentTech('');
         }
-    }
+    };
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        console.log(project);
+        // Here you would typically send the project data to your backend
+    };
 
     return (
         <Sheet>
@@ -62,24 +90,32 @@ const ProjectEditor = () => {
                     <SheetTitle className="w-full text-center">
                         Add Your Project Details
                     </SheetTitle>
-                    <div className="flex w-full flex-col items-center justify-center space-y-6">
+                    <form onSubmit={handleSubmit} className="flex w-full flex-col items-center justify-center space-y-6">
                         <InputField
                             label="Project Title"
                             id="title"
+                            name="title"
                             type="text"
                             placeholder="Enter your Project Title"
+                            value={project.title}
+                            onChange={handleInputChange}
                         />
                         <InputField
                             label="Project Image"
                             id="projectImage"
+                            name="projectImage"
                             type="file"
                             accept="image/*"
+                            onChange={handleFileChange}
                         />
                         <InputField
                             label="Project Link"
                             id="projectLink"
+                            name="projectLink"
                             type="url"
                             placeholder="Add your project link"
+                            value={project.projectLink}
+                            onChange={handleInputChange}
                         />
                         <div className="flex w-8/12 flex-col space-y-1">
                             <Label htmlFor="techStack" className="pl-1.5 text-base">
@@ -94,12 +130,12 @@ const ProjectEditor = () => {
                                     className="border p-2"
                                     placeholder="Add a technology"
                                 />
-                                <Button onClick={handleAddTech} className="bg-slate-50 text-black hover:bg-slate-100">
+                                <Button type="button" onClick={handleAddTech} className="bg-slate-50 text-black hover:bg-slate-100">
                                     Add
                                 </Button>
                             </div>
                             <div className="mt-2 flex flex-wrap gap-2">
-                                {technologies.map((tech, index) => (
+                                {project.techStack.map((tech, index) => (
                                     <span key={index} className="rounded bg-slate-200 px-2 py-1 text-sm">
                                         {tech}
                                     </span>
@@ -116,6 +152,8 @@ const ProjectEditor = () => {
                                 rows={3}
                                 placeholder="Provide a description"
                                 className="resize-none"
+                                value={project.description}
+                                onChange={handleInputChange}
                             />
                         </div>
                         <Button
@@ -124,33 +162,9 @@ const ProjectEditor = () => {
                         >
                             Submit
                         </Button>
-                    </div>
+                    </form>
                 </SheetHeader>
             </SheetContent>
         </Sheet>
     );
 };
-
-const InputField: React.FC<InputFieldProps> = ({
-    label,
-    id,
-    type,
-    placeholder,
-    accept,
-}) => (
-    <div className="flex w-8/12 flex-col space-y-1">
-        <Label htmlFor={id} className="pl-1.5 text-base">
-            {label}
-        </Label>
-        <Input
-            type={type}
-            id={id}
-            name={id}
-            className="border p-2"
-            placeholder={placeholder}
-            accept={accept}
-        />
-    </div>
-);
-
-export default ProjectEditor;

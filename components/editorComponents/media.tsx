@@ -11,7 +11,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
-const MediaEditor = () => {
+export const MediaEditor = () => {
     const [pictures, setPictures] = useState<string[]>([]);
     const [videos, setVideos] = useState<string[]>([]);
     const [currentPicture, setCurrentPicture] = useState('');
@@ -41,7 +41,7 @@ const MediaEditor = () => {
 
     return (
         <Sheet>
-            <div className="h-screen max-h-screen w-full overflow-y-auto overflow-x-hidden">
+            <div className="h-full  w-full overflow-y-auto overflow-x-hidden">
                 <div className="m-8 ml-16 flex w-full flex-col">
                     <header className="mb-8">
                         <h1 className="text-4xl font-extrabold">Edit Your Media</h1>

@@ -8,7 +8,7 @@ interface InputFieldProps {
     type: string;
     placeholder?: string;
     accept?: string;
-    value: string;
+    value?: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     required?: boolean;
 }
