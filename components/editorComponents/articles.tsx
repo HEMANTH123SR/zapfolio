@@ -44,7 +44,7 @@ export const ArticlesEditor = () => {
     return (
         <Sheet>
             <div className="h-full  w-full overflow-y-auto overflow-x-hidden">
-                <div className="m-8 ml-16 flex w-full flex-col">
+                <div className="m-8  flex w-full flex-col">
                     <header className="mb-8">
                         <h1 className="text-4xl font-extrabold">Edit Your Articles</h1>
                         <p className="mt-2 text-sm text-gray-600">

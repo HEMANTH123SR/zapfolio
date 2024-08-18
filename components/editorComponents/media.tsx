@@ -42,7 +42,7 @@ export const MediaEditor = () => {
     return (
         <Sheet>
             <div className="h-full  w-full overflow-y-auto overflow-x-hidden">
-                <div className="m-8 ml-16 flex w-full flex-col">
+                <div className="m-8  flex w-full flex-col">
                     <header className="mb-8">
                         <h1 className="text-4xl font-extrabold">Edit Your Media</h1>
                         <p className="mt-2 text-sm text-gray-600">
@@ -82,14 +82,14 @@ export const MediaEditor = () => {
                                     className="border p-2"
                                     placeholder="Enter picture URL"
                                 />
-                                <Button onClick={handleAddPicture} className="bg-slate-50 text-black hover:bg-slate-100">
+                                <Button onClick={handleAddPicture} className="bg-slate-50 text-black border hover:bg-slate-100">
                                     Add
                                 </Button>
                             </div>
                             <div className="mt-2 flex flex-col gap-2">
                                 {pictures.map((pic, index) => (
                                     <div key={index} className="flex items-center justify-between rounded bg-slate-200 px-2 py-1">
-                                        <span className="text-sm truncate">{pic}</span>
+                                        <span className="text-sm truncate mt-1.5">{pic}</span>
                                         <Button onClick={() => handleRemovePicture(index)} className="ml-2 h-6 w-6 p-0 text-red-500">
                                             X
                                         </Button>
@@ -111,14 +111,14 @@ export const MediaEditor = () => {
                                     className="border p-2"
                                     placeholder="Enter video URL"
                                 />
-                                <Button onClick={handleAddVideo} className="bg-slate-50 text-black hover:bg-slate-100">
+                                <Button onClick={handleAddVideo} className="bg-slate-50 text-black hover:bg-slate-100 border">
                                     Add
                                 </Button>
                             </div>
                             <div className="mt-2 flex flex-col gap-2">
                                 {videos.map((video, index) => (
                                     <div key={index} className="flex items-center justify-between rounded bg-slate-200 px-2 py-1">
-                                        <span className="text-sm truncate">{video}</span>
+                                        <span className="text-sm truncate mt-1.5">{video}</span>
                                         <Button onClick={() => handleRemoveVideo(index)} className="ml-2 h-6 w-6 p-0 text-red-500">
                                             X
                                         </Button>

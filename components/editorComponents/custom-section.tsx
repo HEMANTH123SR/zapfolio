@@ -17,7 +17,7 @@ interface CustomSection {
     title: string;
     content: string;
     picture?: string | null;
-    order?: number | null;
+    order?: string | null;  // Change this to string
     url?: string | null;
 }
 
@@ -34,7 +34,11 @@ export const CustomSectionEditor = () => {
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
-        setCustomSection(prev => ({ ...prev, [name]: value }));
+        if (name === 'order') {
+            setCustomSection(prev => ({ ...prev, [name]: value === '' ? null : value }));
+        } else {
+            setCustomSection(prev => ({ ...prev, [name]: value }));
+        }
     };
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -54,7 +58,7 @@ export const CustomSectionEditor = () => {
     return (
         <Sheet>
             <div className="h-full  w-full overflow-y-auto overflow-x-hidden">
-                <div className="m-8 ml-16 flex w-full flex-col">
+                <div className="m-8  flex w-full flex-col">
                     <header className="mb-8">
                         <h1 className="text-4xl font-extrabold">Edit Custom Sections</h1>
                         <p className="mt-2 text-sm text-gray-600">

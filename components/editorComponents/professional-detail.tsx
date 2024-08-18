@@ -107,7 +107,7 @@ export const ProfessionalInfo = () => {
                             <Button
                                 type="button"
                                 onClick={handleAddSkill}
-                                className="bg-slate-50 text-black hover:bg-slate-100"
+                                className="bg-slate-50 border text-black hover:bg-slate-100"
                             >
                                 Add
                             </Button>
@@ -116,7 +116,7 @@ export const ProfessionalInfo = () => {
                             {professionalInfo.skills.map((skill, index) => (
                                 <span
                                     key={index}
-                                    className="rounded bg-slate-200 px-2 py-1 text-sm"
+                                    className="rounded mt-1.5 bg-slate-200 px-2 py-1 text-sm"
                                 >
                                     {skill}
                                 </span>
