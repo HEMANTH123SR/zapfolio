@@ -287,3 +287,9 @@
 //     </div>
 //   );
 // }
+
+const Vivid = () => {
+  return <div>Vivid</div>;
+};
+
+export default Vivid;

@@ -12,6 +12,8 @@
 // import { useToast } from "@/components/ui/use-toast";
 // import Link from "next/link";
 
+// import { FaUpRightAndDownLeftFromCenter } from "react-icons/fa6";
+
 // export default function Twitter() {
 //   const { user, isLoaded } = useUser();
 //   const { toast } = useToast();
@@ -286,3 +288,9 @@
 //     </div>
 //   );
 // }
+
+const Twitter = () => {
+  return <div>TwitterF</div>;
+};
+
+export default Twitter;

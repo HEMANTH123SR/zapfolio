@@ -289,3 +289,9 @@
 //     </div>
 //   );
 // }
+
+const BentoDark = () => {
+  return <div>bento darkF</div>;
+};
+
+export default BentoDark;

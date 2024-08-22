@@ -12,6 +12,8 @@
 // import { useToast } from "@/components/ui/use-toast";
 // import Link from "next/link";
 
+import { Fa3 } from "react-icons/fa6";
+
 // export default function Windows95() {
 //   const { user, isLoaded } = useUser();
 //   const { toast } = useToast();
@@ -286,3 +288,9 @@
 //     </div>
 //   );
 // }
+
+const Windows95 = () => {
+  return <div>windows 95 </div>;
+};
+
+export default Windows95;
